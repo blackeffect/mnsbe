@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate - nsbemankato</title>
+  <link rel="stylesheet" href="styles\donate.css" />
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">NSBE Mankato</div>
+    <button class="donate-btn" id="openDonateModal">Donate Now</button>
+  </header>
+
+  <main class="hero-section">
+    <div class="hero-content">
+      <h1>Support Our Mission</h1>
+      <p>Your donations help us make a difference.</p>
+      <button class="donate-btn" id="openDonateModalHero">Donate Today</button>
+    </div>
+    <div class="hero-image">
+      <img src="images/slideshow/1740614983996.jpeg" alt="Your Cause" />
+    </div>
+  </main>
+
+  <!-- Donation Modal -->
+  <div id="donateModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeDonateModal">&times;</span>
+      <h2>Make a Donation</h2>
+      <form id="donationForm">
+        <input type="text" name="name" placeholder="Your Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="number" name="amount" placeholder="Donation Amount ($)" min="1" required />
+        <select name="frequency" required>
+          <option value="" disabled selected>Donation Frequency</option>
+          <option value="one-time">One-Time</option>
+          <option value="monthly">Monthly</option>
+          <option value="annually">Annually</option>
+        </select>
+        <button type="submit">Donate Securely</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="Scripts\donate.js"></script>
+</body>
+</html>

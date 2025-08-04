@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Blog - Mankato National Society of Black Engineers Chapter</title>
+    <link rel="stylesheet" href="styles/blog.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="navbar container">
+            <div class="nsbe-mankato-title">
+                <img src="images/nsbeWhiteLogo.png" alt="NSBE Mankato Logo" class="header-logo">
+            </div>
+
+            <button id="menu-toggle" class="menu-icon" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu" id="nav-links">
+                <ul>
+                    <li><a href="index.html" class="nav-link">home</a></li>
+                    <li><a href="join-us.html" class="nav-link">join us</a></li>
+                    <li><a href="#program" class="nav-link">program</a></li>
+                    <li><a href="#donate" class="nav-link">donate</a></li>
+                    <li><a href="#volunteer" class="nav-link">volunteer</a></li>
+                    <li><a href="store.html" class="nav-link">store</a></li>
+                    <li><a href="blog.html" class="nav-link active">black effect</a></li>
+                    <li><a href="contactMe.html" class="nav-link">contact</a></li>
+                    <li><a href="about.html" class="nav-link">who we are</a></li></ul>
+            </nav>
+        </div>
+        <div class="mobile-nav-overlay" id="mobileNavOverlay">
+            <ul class="nav-menu-list">
+                <li><a href="index.html">home</a></li>
+                <li><a href="join-us.html">join us</a></li>
+                <li><a href="#program">program</a></li>
+                <li><a href="#donate">donate</a></li>
+                <li><a href="#volunteer">volunteer</a></li>
+                <li><a href="store.html">store</a></li>
+                <li><a href="blog.html" class="active">black effect</a></li>
+                <li><a href="contactMe.html">contact</a></li>
+                <li><a href="about.html">who we are</a></li>
+                
+            </ul>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="blog-hero-section">
+            <div class="container">
+                <h1>Our Blog: News & Events</h1>
+                <p>Stay updated with the latest happenings, insights, and achievements from the Mankato NSBE Chapter.</p>
+                <div class="blog-search-bar">
+                    <input type="text" placeholder="Search blog posts...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-posts-section">
+            <div class="container blog-container">
+                <div class="blog-posts-grid">
+
+                    <article class="blog-post-card">
+                        <img src="images/blog/blog_event_1.jpg" alt="NSBE Event Title 1" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title">Innovating for Impact: NSBE Hackathon 2025</h3>
+                            <p class="post-meta"><i class="far fa-calendar-alt"></i> July 10, 2025 | <i class="fas fa-tag"></i> Events, Innovation</p>
+                            <p class="post-excerpt">Our annual hackathon brought together students to tackle real-world challenges with creative tech solutions. Read about the winning teams and their groundbreaking projects.</p>
+                            <a href="blog-post-1.html" class="read-more-btn-small">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post-card">
+                        <img src="images/blog/blog_workshop_1.jpg" alt="NSBE Workshop Title 2" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title">Mastering Python: A Beginner's Workshop Success</h3>
+                            <p class="post-meta"><i class="far fa-calendar-alt"></i> June 25, 2025 | <i class="fas fa-tag"></i> Workshops, Education</p>
+                            <p class="post-excerpt">We hosted a highly successful Python workshop, equipping members with essential coding skills. See highlights from the hands-on sessions.</p>
+                            <a href="blog-post-2.html" class="read-more-btn-small">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post-card">
+                        <img src="images/blog/blog_community_1.jpg" alt="NSBE Community Service Title 3" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title">Giving Back: Our Latest Community Outreach</h3>
+                            <p class="post-meta"><i class="far fa-calendar-alt"></i> June 01, 2025 | <i class="fas fa-tag"></i> Community, Volunteering</p>
+                            <p class="post-excerpt">Our members dedicated a day to local community service, demonstrating our commitment to positive impact beyond campus.</p>
+                            <a href="blog-post-3.html" class="read-more-btn-small">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post-card">
+                        <img src="images/blog/blog_alumni_1.jpg" alt="NSBE Alumni Spotlight Title 4" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title">Alumni Spotlight: Pathways to Success in Tech</h3>
+                            <p class="post-meta"><i class="far fa-calendar-alt"></i> May 15, 2025 | <i class="fas fa-tag"></i> Alumni, Careers</p>
+                            <p class="post-excerpt">An inspiring interview with one of our successful alumni, sharing their journey and advice for current students.</p>
+                            <a href="blog-post-4.html" class="read-more-btn-small">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-post-card">
+                        <img src="images/blog/blog_conference_1.jpg" alt="NSBE Conference Title 5" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title">Regional Conference Recap: Inspiring Connections</h3>
+                            <p class="post-meta"><i class="far fa-calendar-alt"></i> April 28, 2025 | <i class="fas fa-tag"></i> Conferences, Networking</p>
+                            <p class="post-excerpt">A look back at our chapter's participation in the recent regional NSBE conference, highlighting key takeaways and new connections.</p>
+                            <a href="blog-post-5.html" class="read-more-btn-small">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post-card">
+                        <img src="images/blog/blog_scholarship_1.jpg" alt="NSBE Scholarship Title 6" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title">Announcing Our Latest Scholarship Recipients</h3>
+                            <p class="post-meta"><i class="far fa-calendar-alt"></i> April 10, 2025 | <i class="fas fa-tag"></i> Scholarships, Achievements</p>
+                            <p class="post-excerpt">Celebrating the academic excellence of our members with the announcement of this year's scholarship awardees.</p>
+                            <a href="blog-post-6.html" class="read-more-btn-small">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <aside class="blog-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="#">Events (3)</a></li>
+                            <li><a href="#">Workshops (2)</a></li>
+                            <li><a href="#">Community (1)</a></li>
+                            <li><a href="#">Alumni (1)</a></li>
+                            <li><a href="#">Achievements (1)</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-widget">
+                        <h3>Recent Posts</h3>
+                        <ul>
+                            <li><a href="#">Innovating for Impact: NSBE Hackathon 2025</a></li>
+                            <li><a href="#">Mastering Python: A Beginner's Workshop Success</a></li>
+                            <li><a href="#">Giving Back: Our Latest Community Outreach</a></li>
+                        </ul>
+                    </div>
+                    </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/nsbe-logo-white.png" alt="NSBE Logo">
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="contactMe.html">Contact</a></li>
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, Mankato, MN</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@nsbemankato.org</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NSBE Mankato Chapter. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/blog.js"></script>
+</body>
+</html>

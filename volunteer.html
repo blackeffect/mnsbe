@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Opportunities - Mankato NSBE Chapter</title>
+    <link rel="stylesheet" href="styles/volunteer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="navbar container">
+            <div class="nsbe-mankato-title">
+                <img src="images/nsbeWhiteLogo.png" alt="NSBE Mankato Logo" class="header-logo">
+            </div>
+
+            <button id="menu-toggle" class="menu-icon" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu" id="nav-links">
+                <ul>
+                    <li><a href="index.html" class="nav-link">home</a></li>
+                    <li><a href="join-us.html" class="nav-link">join us</a></li>
+                    <li><a href="#program" class="nav-link">program</a></li>
+                    <li><a href="#donate" class="nav-link">donate</a></li>
+                    <li><a href="volunteer.html" class="nav-link active">volunteer</a></li> <li><a href="store.html" class="nav-link">store</a></li>
+                    <li><a href="#black-effect" class="nav-link">black effect</a></li>
+                    <li><a href="contactMe.html" class="nav-link">contact</a></li>
+                    <li><a href="about.html" class="nav-link">who we are</a></li>
+                    <li><a href="blog.html" class="nav-link">blog</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="mobile-nav-overlay" id="mobileNavOverlay">
+            <ul class="nav-menu-list">
+                <li><a href="index.html">home</a></li>
+                <li><a href="join-us.html">join us</a></li>
+                <li><a href="#program">program</a></li>
+                <li><a href="#donate">donate</a></li>
+                <li><a href="volunteer.html" class="active">volunteer</a></li>
+                <li><a href="store.html">store</a></li>
+                <li><a href="#black-effect">black effect</a></li>
+                <li><a href="contactMe.html">contact</a></li>
+                <li><a href="about.html">who we are</a></li>
+                <li><a href="blog.html">blog</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="volunteer-hero-section">
+            <div class="container">
+                <h1>Lend a Hand, Make a Difference!</h1>
+                <p>Your time and effort are invaluable to the success of our initiatives. Join us in empowering the next generation of Black engineers.</p>
+                <a href="#signup-form-section" class="btn btn-primary scroll-to-form">Sign Up Today <i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+
+        <section class="opportunities-section">
+            <div class="container">
+                <h2>Current Volunteer Opportunities</h2>
+                <div id="events-container" class="events-grid">
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="container">
+                <blockquote id="motivational-quote">
+                    "The greatest good you can do for another is not just to share your riches but to reveal to him his own."
+                    <cite id="quote-author">— Benjamin Disraeli</cite>
+                </blockquote>
+                <button id="next-quote-btn" class="btn btn-secondary"><i class="fas fa-sync-alt"></i> New Quote</button>
+            </div>
+        </section>
+
+        <section id="signup-form-section" class="signup-form-section">
+            <div class="container">
+                <h2>Volunteer Signup Form</h2>
+                <form id="signup-form" class="volunteer-form">
+                    <div class="form-group">
+                        <label for="event">Select Event:</label>
+                        <select id="event" name="event" required aria-label="Select an event you wish to volunteer for">
+                            </select>
+                        <div class="error-message" id="event-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required aria-required="true">
+                        <div class="error-message" id="name-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="john.doe@example.com" required aria-required="true">
+                        <div class="error-message" id="email-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional):</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+                        <div class="error-message" id="phone-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hours">Number of Hours to Volunteer (Min 1hr):</label>
+                        <input type="number" id="hours" name="hours" min="1" value="1" required aria-required="true">
+                        <div class="error-message" id="hours-error"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary form-submit-btn">Submit Your Signup</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/nsbe-logo-white.png" alt="NSBE Logo">
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="contactMe.html">Contact</a></li>
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, Mankato, MN</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@nsbemankato.org</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NSBE Mankato Chapter. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="success-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <i class="fas fa-check-circle modal-icon"></i>
+            <h3>Thank you for signing up!</h3>
+            <p>Your commitment helps us achieve our goals. We'll contact you soon with more details.</p>
+            <button class="btn btn-primary" onclick="closeModal()">Awesome!</button>
+        </div>
+    </div>
+
+    <div id="error-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <i class="fas fa-exclamation-triangle modal-icon error-icon"></i>
+            <h3>Oops! Something went wrong.</h3>
+            <p id="error-message-text">Please check your form for errors and try again.</p>
+            <button class="btn btn-secondary" onclick="closeModal('error-modal')">Got it</button>
+        </div>
+    </div>
+
+
+    <script src="js/volunteer.js"></script>
+</body>
+</html>

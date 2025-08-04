@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>NSBE Sponsorship Packages</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #2b2d42;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; /* Added border-radius for consistency with other cards */
+        }
+
+        h1, h2 {
+            color: #2b2d42;
+        }
+
+        .package {
+            margin-bottom: 20px;
+            border-left: 6px solid #2b2d42;
+            padding-left: 15px;
+        }
+
+        .btn-toggle {
+            background-color: #ef233c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .btn-toggle:hover {
+            background-color: #d90429;
+        }
+
+        .packages {
+            display: none;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        /* New styles for the contact card */
+        .contact-interest-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 40px; /* Space from the packages above */
+            text-align: center;
+            border: 1px solid #ddd; /* Subtle border */
+        }
+
+        .contact-interest-card h2 {
+            font-size: 1.8em;
+            color: #2b2d42; /* Main header color */
+            margin-bottom: 15px;
+        }
+
+        .contact-interest-card p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .contact-interest-card .contact-link {
+            display: inline-block;
+            background-color: #4CAF50; /* A green color for action, or use your orange #f57c00 */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-interest-card .contact-link:hover {
+            background-color: #45a049; /* Darker green on hover */
+            /* If you use orange, for example: background-color: #e65100; */
+        }
+
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                margin: 20px;
+            }
+
+            .btn-toggle {
+                width: 100%;
+            }
+            /* Adjust contact card for mobile */
+            .contact-interest-card {
+                padding: 20px;
+            }
+            .contact-interest-card h2 {
+                font-size: 1.5em;
+            }
+            .contact-interest-card p {
+                font-size: 1em;
+            }
+            .contact-interest-card .contact-link {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>NSBE 2025 Conference Sponsorship</h1>
+        <p>Support our students attending the NSBE National Convention in Maryland</p>
+    </header>
+
+    <div class="container">
+        <button class="btn-toggle" onclick="togglePackages()">View Sponsorship Packages</button>
+
+        <div class="packages" id="sponsorshipPackages">
+            <div class="package">
+                <h2>Gold Sponsor | $2,000+</h2>
+                <ul>
+                    <li>Logo on all NSBE flyers, t-shirts, and social media</li>
+                    <li>Invitation to Networking Night as a featured guest</li>
+                    <li>Opportunity to speak at a student event</li>
+                    <li>Recognition in post-conference video & report</li>
+                    <li>Access to NSBE student resumes</li>
+                    <li>Framed certificate of appreciation</li>
+                    <li>Personalized shoutouts on social media</li>
+                </ul>
+            </div>
+
+            <div class="package">
+                <h2>Silver Sponsor | $1,000 – $1,999</h2>
+                <ul>
+                    <li>Logo on select flyers and social media</li>
+                    <li>Recognition in post-conference thank-ou report</li>
+                    <li>Access to NSBE resume book</li>
+                    <li>Social media shoutout</li>
+                    <li>Certificate of appreciation</li>
+                </ul>
+            </div>
+
+            <div class="package">
+                <h2>Bronze Sponsor | $500 – $999</h2>
+                <ul>
+                    <li>Recognition on NSBE Instagram & LinkedIn</li>
+                    <li>Mention in post-conference thank-you report</li>
+                    <li>Certificate of appreciation</li>
+                </ul>
+            </div>
+
+            <div class="package">
+                <h2>Supporter | $250 – $499</h2>
+                <ul>
+                    <li>Instagram story thank-you mention</li>
+                    <li>Inclusion in thank-you email</li>
+                    <li>Digital certificate of appreciation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-interest-card">
+            <h2>Interested in Sponsoring?</h2>
+            <p>
+                We'd love to discuss how your support can make a difference. If you have questions about these packages or wish to propose a custom sponsorship, please don't hesitate to reach out.
+            </p>
+            <a href="../contact.html" class="contact-link">Contact Us Today</a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2025 NSBE – Minnesota State University, Mankato Chapter
+    </div>
+
+    <script>
+        function togglePackages() {
+            const section = document.getElementById("sponsorshipPackages");
+            section.style.display = section.style.display === "none" || section.style.display === "" ? "block" : "none";
+        }
+    </script>
+
+</body>
+</html>

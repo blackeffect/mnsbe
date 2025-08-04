@@ -1,0 +1,514 @@
+/* Import common styles from about2.css */
+@import url('about2.css');
+
+/* --- Volunteer Page Specific Styles --- */
+
+/* Hero Section */
+.volunteer-hero-section {
+    padding: 100px 0 80px; /* Adjust padding for visual balance */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('../images/volunteer_hero_bg.jpg') no-repeat center center/cover; /* Replace with a suitable volunteer image */
+    color: var(--primary-white);
+    text-align: center;
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.volunteer-hero-section h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 4em;
+    color: var(--primary-white);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.volunteer-hero-section h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100px;
+    height: 4px;
+    background-color: var(--nsbe-orange);
+    border-radius: 2px;
+}
+
+.volunteer-hero-section p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+/* Primary Button (General Style - re-used from about.css if present, otherwise define) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: none; /* Ensure no default border */
+}
+
+.btn-primary {
+    background-color: var(--nsbe-blue);
+    color: var(--primary-white);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--nsbe-orange);
+    border: 2px solid var(--nsbe-orange);
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--nsbe-orange);
+    color: var(--primary-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.scroll-to-form {
+    margin-top: 30px;
+}
+
+/* Opportunities Section */
+.opportunities-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.opportunities-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.event-card {
+    background-color: var(--primary-white);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.event-card h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.8em;
+    color: var(--dark-gray);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--nsbe-orange);
+    padding-bottom: 10px;
+    display: inline-block; /* For the underline */
+    line-height: 1.2;
+}
+
+.event-card p {
+    font-size: 1em;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.event-card p.meta {
+    font-size: 0.9em;
+    color: var(--nsbe-blue);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.event-card p.meta i {
+    color: var(--nsbe-orange);
+}
+
+/* Motivational Quote Section */
+.quote-section {
+    background-color: var(--dark-gray);
+    color: var(--primary-white);
+    text-align: center;
+    padding: 80px 0;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 10px; /* Keep consistent with other sections */
+}
+
+#motivational-quote {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.2em; /* Larger, more impactful quote */
+    font-style: italic;
+    line-height: 1.4;
+    max-width: 900px;
+    margin: 0 auto 30px;
+    position: relative;
+    padding: 0 20px;
+}
+
+#motivational-quote::before {
+    content: '“';
+    font-family: Georgia, serif;
+    font-size: 5em;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    left: 0px;
+    top: -20px;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+#motivational-quote::after {
+    content: '”';
+    font-family: Georgia, serif;
+    font-size: 5em;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    right: 0px;
+    bottom: -50px;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+
+#quote-author {
+    display: block;
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: var(--nsbe-orange);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* Volunteer Signup Form Section */
+.signup-form-section {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.signup-form-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+}
+
+.volunteer-form {
+    background-color: var(--primary-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative; /* For error messages */
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1em;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid var(--medium-gray);
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    appearance: none; /* Remove default select styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--light-gray);
+}
+
+.form-group select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4L146.2%20207.9%205.4%2069.4c-1.8-2.6-4.9-4.1-8.9-4.1h-0.2c-7.9%200-14.3%206.4-14.3%2014.3v0.2c0%204.4%202.4%208.5%206.4%2011.6L146%20247.9c4.2%203.7%2010.8%203.7%2015%200l142.1-124.6c4-3.1%206.4-7.2%206.4-11.6v-0.2c0-7.9-6.4-14.3-14.3-14.3h-0.2c-4%200-7.1%201.5-8.9%204.1z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    padding-right: 40px; /* Make space for the arrow */
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--nsbe-orange);
+    box-shadow: 0 0 0 3px rgba(245, 124, 0, 0.2);
+    background-color: var(--primary-white);
+}
+
+.form-group .error-message {
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none; /* Hidden by default */
+}
+
+.form-group.error input,
+.form-group.error select {
+    border-color: #e74c3c;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+.form-submit-btn {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    z-index: 2000; /* Higher than header */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--primary-white);
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-50px); /* Start slightly off */
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.4s ease; /* Bounce effect */
+}
+
+.modal.visible .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.close-button {
+    color: var(--dark-gray);
+    font-size: 2em;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: var(--nsbe-orange);
+}
+
+.modal-icon {
+    font-size: 4em;
+    color: #4CAF50; /* Green for success */
+    margin-bottom: 20px;
+}
+
+.modal-icon.error-icon {
+    color: #e74c3c; /* Red for error */
+}
+
+.modal-content h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2.2em;
+    color: var(--dark-gray);
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .volunteer-hero-section h1 {
+        font-size: 3.5em;
+    }
+
+    .opportunities-section h2,
+    .signup-form-section h2 {
+        font-size: 2.2em;
+    }
+    .events-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .quote-section {
+        padding: 60px 0;
+    }
+
+    #motivational-quote {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .volunteer-hero-section h1 {
+        font-size: 2.8em;
+    }
+
+    .volunteer-hero-section p {
+        font-size: 1.1em;
+    }
+
+    .opportunities-section h2,
+    .signup-form-section h2 {
+        font-size: 1.8em;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .event-card {
+        padding: 25px;
+    }
+
+    .event-card h3 {
+        font-size: 1.6em;
+    }
+
+    .quote-section {
+        padding: 50px 0;
+    }
+
+    #motivational-quote {
+        font-size: 1.5em;
+        line-height: 1.5;
+    }
+
+    #quote-author {
+        font-size: 1em;
+    }
+
+    .volunteer-form {
+        padding: 30px;
+    }
+
+    .form-group label {
+        font-size: 1em;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 12px 15px;
+    }
+
+    .form-submit-btn {
+        padding: 15px;
+        font-size: 1.1em;
+    }
+
+    .modal-content {
+        padding: 30px;
+    }
+
+    .modal-icon {
+        font-size: 3em;
+    }
+
+    .modal-content h3 {
+        font-size: 1.8em;
+    }
+
+    .modal-content p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .volunteer-hero-section h1 {
+        font-size: 2.2em;
+    }
+
+    .volunteer-hero-section p {
+        font-size: 1em;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .opportunities-section h2,
+    .signup-form-section h2 {
+        font-size: 1.6em;
+        margin-bottom: 30px;
+    }
+
+    .event-card h3 {
+        font-size: 1.4em;
+    }
+
+    .quote-section {
+        padding: 40px 0;
+    }
+
+    #motivational-quote {
+        font-size: 1.2em;
+    }
+}

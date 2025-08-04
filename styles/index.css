@@ -1,0 +1,1583 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header (Remains unchanged) */
+.header {
+    background-color: #000; /* Black header as seen in some of your provided images */
+    /* Changed height to match index.css and about.css */
+    height: 90px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+    display: flex; /* Added flex for vertical centering of content */
+    align-items: center; /* Vertically center content */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%; /* Make navbar take full height of header */
+    width: 100%;
+    padding: 0 20px; /* Consistent horizontal padding */
+    max-width: 1200px; /* Consistent max-width */
+    margin: 0 auto; /* Center the navbar content */
+}
+
+/* NSBE Logo in Header */
+.header-logo {
+    /* Changed height to match index.css and about.css */
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+/* Desktop Navigation Menu */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0; /* Ensure no default margins interfere */
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    text-transform: capitalize;
+    white-space: nowrap; /* Prevent links from wrapping */
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Mobile Menu Toggle Button (hidden by default on desktop) */
+.menu-icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: none; /* Hidden on desktop */
+    margin-left: auto; /* Pushes the icon to the far right when displayed */
+}
+
+/* Mobile Nav Overlay - Full screen for mobile menu */
+.mobile-nav-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 90px; /* Starts below the header (90px height) */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 90px); /* Fill remaining viewport height */
+    background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
+    z-index: 999;
+    overflow-y: auto; /* Enable scrolling for many links */
+}
+
+.mobile-nav-overlay.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav-overlay .nav-menu-list {
+    list-style: none;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-nav-overlay .nav-menu-list li {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+.mobile-nav-overlay .nav-menu-list li:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-overlay .nav-menu-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    display: block;
+    transition: color 0.3s ease;
+    text-transform: capitalize; /* Consistent capitalization */
+}
+
+.mobile-nav-overlay .nav-menu-list a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        height: 70px; /* Adjust header height for mobile */
+    }
+
+    .navbar {
+        padding: 0 15px; /* Adjust padding for smaller screens */
+    }
+
+    .header-logo {
+        height: 50px; /* Adjust logo size for mobile */
+    }
+
+    /* Show mobile menu toggle button */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Hide desktop navigation by default on mobile */
+    .nav-menu {
+        display: none; /* Hidden by default */
+        position: fixed; /* Use fixed for full overlay effect */
+        top: 70px; /* Position directly below the header (70px height) */
+        left: 0;
+        width: 100%;
+        height: calc(100% - 70px); /* Fill remaining viewport height */
+        background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
+        z-index: 999;
+        overflow-y: auto; /* Enable scrolling for many links */
+        flex-direction: column; /* Stack menu items vertically */
+        justify-content: center; /* Center items in the overlay */
+        align-items: center;
+    }
+
+    /* Show mobile navigation when 'active' class is present */
+    .nav-menu.active {
+        display: flex; /* Display when active */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-menu ul li {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu ul li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.8rem 1rem;
+        font-size: 1.1rem;
+        text-transform: capitalize;
+    }
+}
+
+
+
+/* Main content section */
+.main-content-section {
+    margin-top: 0;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+/* Container for slideshow (center) and right content */
+.slideshow-with-side-content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensures children (slideshow and right block) stretch to fill height */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* Styles for the main slideshow wrapper */
+.slideshow-wrapper-center {
+    flex-grow: 2; /* Allows it to take more space */
+    flex-shrink: 1;
+    flex-basis: 65%; /* Base width */
+    max-width: 800px; /* Max width for the slideshow itself */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Slideshow Container (Size remains the same, dictates height) */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 400px; /* This fixed height is the target height for the right block */
+    overflow: hidden;
+    border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #333333;
+
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color:  #2F4F4F; */
+}
+
+.slides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.slides img,
+.slides video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Style for the text on top of the slides */
+.slide-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Text color */
+    font-size: 2em; /* Adjust as needed */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds readability */
+    z-index: 2; /* Ensures text is above the image/video */
+    pointer-events: none; /* Allows clicks to pass through to the link */
+    width: 80%; /* Limit text width */
+    text-align: center;
+}
+
+/* Style for the link overlay, ensuring it covers the whole slide */
+.slides a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Use flexbox to center content easily if needed */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit color, though slide-text will override */
+}
+
+
+
+
+
+/* Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 12px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Navigation dots */
+.dot-container {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #f57c00;
+}
+
+
+/* Styles for the right side content */
+.onTheRightOfMySection {
+    flex-grow: 1; /* Allow it to grow and take remaining space */
+    flex-shrink: 1;
+    flex-basis: 30%; /* Starting base width, adjust to get desired ratio with slideshow */
+    min-width: 250px; /* Minimum width before stacking */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Keep shadow on this main container */
+    display: flex;
+    flex-direction: column; /* Stack its internal blocks vertically */
+    justify-content: space-between; /* Distribute space between blocks vertically */
+    align-items: center; /* Center content horizontally within this block */
+    text-align: center;
+    height: 400px; /* Explicitly set height to match slideshow-container height */
+    /* Remove overflow: hidden here if it's the culprit, or adjust spacing */
+
+    /* Initial state for JavaScript animation */
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Animation class */
+.info-block.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Styles for inner blocks of onTheRightOfMySection */
+.chapter-info-block,
+.black-excellence-block,
+.mnsu-logo {
+    background-color: #fff;
+    padding: 15px; /* Maintain individual padding */
+    border-radius: 8px;
+    box-shadow: none; /* No shadow */
+    text-align: center;
+    /* Adjusted margin-bottom to be smaller, or use flex gap on parent */
+    margin-bottom: 10px; /* Reduced margin to create more vertical space */
+    width: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+/* Ensure the last internal block doesn't have bottom margin */
+.onTheRightOfMySection > div:last-child {
+    margin-bottom: 0;
+}
+
+
+.chapter-info-block img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.chapter-info-block h3 {
+    color: #666;
+    font-size: 1.3em;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.black-excellence-block {
+    flex-grow: 1; /* Allows this specific block to expand and take up remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center its content if it grows */
+    align-items: center;
+    padding: 15px; /* Ensure consistent padding even if it grows */
+}
+
+.black-excellence-block h2 {
+    color: #000;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.black-excellence-block p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.mnsu-logo {
+    /* No additional margin-bottom needed here due to the general rule above */
+}
+
+.mnsu-logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+/* Mission Statement styles (Remains unchanged) */
+.mission-statement {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 1.6;
+    color: #333;
+    font-size: 1.1em;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.mission-statement p {
+    margin-bottom: 15px;
+}
+
+.mission-statement p:last-child {
+    margin-bottom: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.mission-statement strong {
+    color: #f57c00;
+}
+
+.mission-statement.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) { /* Tablet and smaller screens */
+    .slideshow-with-side-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .onTheRightOfMySection,
+    .slideshow-wrapper-center {
+        min-width: unset;
+        flex-basis: auto;
+        width: 100%;
+        margin-bottom: 20px;
+        transform: none;
+        height: auto; /* Allow height to be determined by content when stacked */
+    }
+
+    .onTheRightOfMySection.is-visible {
+        transform: translateY(0);
+    }
+
+    .slideshow-container {
+        height: 300px; /* Adjust slideshow height for smaller screens */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile-specific adjustments */
+    header {
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    .inner-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 10px;
+    }
+
+    nav {
+        flex-grow: unset;
+        width: 100%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .search-bar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-bar input {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+
+
+
+
+/* CSS for the new section */
+
+.association-section {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line on smaller screens */
+    justify-content: center; /* Center items horizontally */
+    gap: 30px; /* Space between the left and right boxes */
+    max-width: 1200px; /* Max width for the whole section */
+    margin: 50px auto; /* Top/bottom margin and auto for horizontal centering */
+    padding: 0 20px; /* Horizontal padding for responsiveness */
+}
+
+.left-content-box {
+    flex: 1; /* Allows it to grow and shrink */
+    min-width: 300px; /* Minimum width before wrapping */
+    background-color: #f0f0f0; /* Light background for the box */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex; /* Use flex to stack inner content */
+    flex-direction: column;
+    align-items: center; /* Center horizontally within the left box */
+    text-align: center;
+}
+
+.join-box {
+    width: 100%; /* Take full width of its parent */
+    padding-bottom: 20px; /* Space below the heading/image */
+}
+
+.join-box h2 {
+    color: #2F4F4F; /* Dark Slate Gray, or your preferred dark color */
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+.join-box h2 a {
+    color: inherit; /* Inherit color from h2 by default, or set a specific color */
+    text-decoration: none; /* Remove default underline */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for hover effects */
+     color: #0e8080;
+}
+
+.join-box h2 a:hover {
+    color: #f57c00; /* Change to your orange accent color on hover */
+    text-decoration: underline; /* Add underline on hover */
+    cursor: pointer; /* Ensure pointer cursor on hover */
+}
+
+.join-box-image {
+    max-width: 100%; /* Ensures the image doesn't overflow its container */
+    height: auto;    /* Maintains the image's aspect ratio */
+    display: block;  /* Removes extra space below the image, useful if it's the last element */
+    margin-top: 20px; /* Adds some space above the image, separating it from the heading */
+    border-radius: 8px; /* Optional: Adds slight rounded corners to the image */
+}
+
+.right-content-box {
+    flex: 2; /* Allows it to take more space than the left box */
+    min-width: 400px; /* Minimum width before wrapping */
+    background-color: #ffffff; /* White background for the main content */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.right-content-box h3 {
+    color: #f57c00; /* Orange color, matching your dot navigation active state */
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.right-content-box p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: justify; /* Justify text for a cleaner look */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .association-section {
+        flex-direction: column; /* Stack boxes vertically on smaller screens */
+        align-items: center; /* Center stacked boxes */
+    }
+
+    .left-content-box,
+    .right-content-box {
+        min-width: unset; /* Remove min-width to allow full width */
+        width: 90%; /* Take up most of the width, with padding */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* CSS for the new Events Section */
+
+/* CSS for the new Events Section - Adjusted for a single featured event */
+
+.events-section {
+    max-width: 1200px;
+    margin: 50px auto; /* Top/bottom margin and auto for horizontal centering */
+    padding: 0 20px;
+    text-align: center; /* Center the main heading and the link button */
+}
+
+.events-section h2 {
+    font-size: 2.5em;
+    color: #2F4F4F; /* Dark Slate Gray, or your preferred dark color */
+    margin-bottom: 40px;
+}
+
+.featured-event {
+    display: flex;
+    justify-content: center; /* Center the single event card */
+    margin-bottom: 40px; /* Space between the event card and the button */
+}
+
+.event-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow for prominence */
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px; /* Max width for the featured event card */
+    display: flex; /* Use flexbox for internal layout (image and details side-by-side or stacked) */
+    flex-direction: column; /* Stack image and details by default on small screens */
+    text-align: left; /* Align text inside the card to the left */
+}
+
+.event-picture {
+    width: 100%;
+    height: 300px; /* Slightly taller image for the featured event */
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.event-details {
+    padding: 25px; /* Slightly more padding */
+}
+
+.event-details h3 {
+    font-size: 2em; /* Larger heading for the featured event */
+    color: #f57c00; /* Orange color */
+    margin-bottom: 15px;
+}
+
+.event-date-venue {
+    font-size: 1.1em; /* Slightly larger date/venue text */
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.event-description {
+    font-size: 1.05em; /* Slightly larger description text */
+    color: #444;
+    line-height: 1.6;
+}
+
+.all-events-link-container {
+    margin-top: 30px; /* Space above the button */
+}
+
+.all-events-button {
+    display: inline-block; /* Allows padding and margin, and keeps it on one line */
+    padding: 12px 25px;
+    background-color: #007bff; /* A nice blue for the button */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.all-events-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+
+/* Responsive adjustments for the featured event card */
+@media (min-width: 768px) {
+    .event-card {
+        flex-direction: row; /* Image and details side-by-side on larger screens */
+    }
+
+    .event-picture {
+        width: 40%; /* Image takes 40% of the card width */
+        height: auto; /* Let height adjust to content */
+        border-radius: 0;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .event-details {
+        width: 60%; /* Details take 60% of the card width */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* ... new section of volutear that take us to the main page of vulunterr... */
+/* CSS for the Volunteer Section */
+
+.volunteer-section {
+    background-color: #e9ecef; /* A light, soft background color */
+    padding: 60px 20px; /* Ample padding top/bottom and horizontal */
+    text-align: center; /* Center all content within the section */
+    margin: 50px auto; /* Add margin to separate from other sections */
+    max-width: 1200px; /* Keep it within a reasonable width */
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+}
+
+.volunteer-content {
+    max-width: 800px; /* Constrain content width within the section */
+    margin: 0 auto; /* Center the content block */
+}
+
+.volunteer-section h2 {
+    font-size: 2.8em;
+    color: #2F4F4F; /* Dark Slate Gray, or your preferred dark color */
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.volunteer-section p {
+    font-size: 1.15em;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    max-width: 700px; /* Limit paragraph width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.volunteer-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #f57c00; /* Your orange accent color */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px; /* Slightly more rounded button */
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* More prominent shadow for the button */
+}
+
+.volunteer-button:hover {
+    background-color: #e65100; /* Darker orange on hover */
+    transform: translateY(-3px); /* More pronounced lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .volunteer-section h2 {
+        font-size: 2em; /* Smaller heading on small screens */
+    }
+
+    .volunteer-section p {
+        font-size: 1em; /* Smaller paragraph text */
+    }
+
+    .volunteer-button {
+        font-size: 1em; /* Smaller button text */
+        padding: 12px 25px;
+    }
+}
+
+
+/* CSS for the new Shop, Donate, and Sponsorship Sections */
+
+/* General styles for these action sections */
+.action-section {
+    padding: 60px 20px;
+    text-align: center;
+    margin: 50px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.action-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.action-section h2 {
+    font-size: 2.8em;
+    color: #2F4F4F; /* Dark Slate Gray */
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.action-section p {
+    font-size: 1.15em;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* General button style for these sections */
+.action-button {
+    display: inline-block;
+    padding: 15px 35px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.action-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Specific background colors for each section */
+.shop-section {
+    background-color: #f8f9fa; /* Very light gray */
+}
+
+.donate-section {
+    background-color: #e9f5e9; /* Very light green, suggesting growth/support */
+}
+
+.sponsor-section {
+    background-color: #e6f2ff; /* Very light blue, suggesting partnership/professionalism */
+}
+
+/* Specific button colors */
+.shop-button {
+    background-color: #4a6c8e; /* A muted blue/gray */
+}
+.shop-button:hover {
+    background-color: #3b5a7b;
+}
+
+.donate-button {
+    background-color: #28a745; /* A standard green */
+}
+.donate-button:hover {
+    background-color: #218838;
+}
+
+.sponsor-button {
+    background-color: #6f42c1; /* A purple for distinctiveness */
+}
+.sponsor-button:hover {
+    background-color: #5a359c;
+}
+/* CSS for Section Images in Shop and Donate /*/
+.section-image {
+max-width: 100%; /* Ensure image doesn't exceed container width */
+height: auto;
+display: block; /* Prevents inline spacing issues */
+margin: 20px auto; /* Center the image and add some vertical space */
+border-radius: 8px; /* Optional: slight rounded corners */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image 
+}/* Specific styling for the Donate image (Cash App QR) */
+
+}
+
+.donate-image {
+max-width: 200px; /* Adjust size as needed for scannability */
+}
+
+/* Specific styling for the Shop image (T-Shirt Design) */
+.shop-image {
+max-width: 300px; /* Adjust size to showcase the design */
+}
+
+
+/* Responsive adjustments for these sections */
+@media (max-width: 768px) {
+    .action-section h2 {
+        font-size: 2em;
+    }
+
+    .action-section p {
+        font-size: 1em;
+    }
+
+    .action-button {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+}
+
+
+
+/* CSS for the NEW Alternate Contact Section Design */
+
+.contact-section-alt {
+    max-width: 1000px; /* Overall max width for the section */
+    margin: 80px auto; /* More vertical spacing, centered horizontally */
+    padding: 0 20px;
+    text-align: center; /* Center main headings and intro text */
+}
+
+.contact-header {
+    margin-bottom: 50px;
+}
+
+.contact-section-alt h2 {
+    font-size: 3em;
+    color: #2F4F4F; /* Dark Slate Gray */
+    margin-bottom: 15px;
+}
+
+.contact-section-alt p {
+    font-size: 1.15em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between info items */
+    margin-bottom: 60px;
+}
+
+.info-item {
+    flex: 1; /* Allows items to grow/shrink */
+    min-width: 280px; /* Minimum width for each item before wrapping */
+    padding: 30px;
+    background-color: #f8f8f8; /* Light background for info cards */
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.info-item i { /* Icon styling */
+    font-size: 2.5em;
+    color: #f57c00; /* Orange accent color */
+    margin-bottom: 20px;
+    display: block; /* Ensures icon is on its own line */
+}
+
+.info-item h3 {
+    font-size: 1.5em;
+    color: #4a7751; /* Dark green from previous contact design */
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+.info-item a {
+    color: #666; /* Match text color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+    color: #f57c00; /* Orange on hover for links */
+}
+
+.contact-form-wrapper {
+    background-color: #ffffff; /* White background for the form block */
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Max width for the form itself */
+    margin: 0 auto; /* Center the form wrapper */
+}
+
+.contact-form-wrapper h3 {
+    font-size: 2em;
+    color: #2F4F4F; /* Dark Slate Gray */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-form-wrapper .form-row {
+    display: flex;
+    gap: 20px; /* Space between inputs in a row */
+    margin-bottom: 20px;
+}
+
+.contact-form-wrapper input[type="text"],
+.contact-form-wrapper input[type="email"],
+.contact-form-wrapper input[type="tel"],
+.contact-form-wrapper textarea {
+    flex: 1; /* Inputs take equal space in a row */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.contact-form-wrapper textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form-wrapper input::placeholder,
+.contact-form-wrapper textarea::placeholder {
+    color: #aaa;
+}
+
+.send-message-button-alt {
+    width: 100%; /* Button takes full width of form wrapper */
+    padding: 18px;
+    background-color: #f57c00; /* Orange accent color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px; /* Space above button */
+}
+
+.send-message-button-alt:hover {
+    background-color: #e65100; /* Darker orange on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments for the alternate contact section */
+@media (max-width: 768px) {
+    .contact-section-alt h2 {
+        font-size: 2.2em;
+    }
+
+    .contact-info-grid {
+        flex-direction: column; /* Stack info items vertically */
+        gap: 20px;
+    }
+
+    .info-item {
+        min-width: unset; /* Allow items to take full width */
+        width: 100%;
+        padding: 25px;
+    }
+
+    .contact-form-wrapper {
+        padding: 30px;
+    }
+
+    .contact-form-wrapper h3 {
+        font-size: 1.8em;
+    }
+
+    .contact-form-wrapper .form-row {
+        flex-direction: column; /* Stack form inputs vertically in rows */
+        gap: 15px;
+    }
+
+    .contact-form-wrapper input,
+    .contact-form-wrapper textarea,
+    .send-message-button-alt {
+        font-size: 0.95em;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section-alt h2 {
+        font-size: 1.8em;
+    }
+    .contact-header p {
+        font-size: 1em;
+    }
+    .info-item i {
+        font-size: 2em;
+    }
+    .info-item h3 {
+        font-size: 1.3em;
+    }
+    .info-item p {
+        font-size: 0.9em;
+    }
+}
+
+
+/* CSS for contact submit alert boc*/
+.alert-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.alert-content {
+  background: white;
+  padding: 2em;
+  border-radius: 8px;
+  text-align: center;
+}
+
+
+
+
+/* CSS for Improved Testimonials Section */
+
+.testimonials-section {
+    padding: 80px 20px; /* More vertical padding */
+    background-color: #f8f8f8; /* A light background to make it stand out */
+    text-align: center;
+    margin: 0 auto; /* Ensures it spans full width of parent, if parent allows */
+    max-width: 1200px; /* Constrain content width */
+}
+
+.testimonials-section h2 {
+    font-size: 3em; /* Larger, more prominent heading */
+    color: #2F4F4F; /* Dark Slate Gray */
+    margin-bottom: 60px; /* More space below heading */
+    position: relative; /* For the underline effect */
+    display: inline-block; /* To make underline fit content */
+}
+
+.testimonials-section h2::after {
+    content: '';
+    display: block;
+    width: 80px; /* Length of the underline */
+    height: 4px;
+    background-color: #f57c00; /* Orange underline */
+    margin: 15px auto 0; /* Center underline below heading */
+    border-radius: 2px;
+}
+
+.testimonials-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+    justify-content: center; /* Centers cards when there are fewer than 3 in a row */
+    gap: 30px; /* Space between testimonial cards */
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    padding: 30px;
+    flex: 1; /* Allows cards to grow and shrink */
+    min-width: 280px; /* Minimum width for cards */
+    max-width: 350px; /* Max width for cards in a grid */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content within the card */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.profile-avatar {
+    width: 80px; /* Size of the avatar circle */
+    height: 80px;
+    border-radius: 50%; /* Makes it a circle */
+    background-color: #e0e0e0; /* Light gray background for the avatar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 3px solid #007bff; /* Blue border around avatar, matching original image */
+    overflow: hidden; /* Ensures image inside is clipped to circle */
+}
+
+.profile-avatar i { /* Styling for Font Awesome icon if used */
+    font-size: 3.5em; /* Size of the icon */
+    color: #666; /* Color of the icon */
+}
+
+.profile-avatar img { /* Styling for actual image if used */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the circle */
+}
+
+.author-name {
+    font-size: 1.6em;
+    color: #007bff; /* Blue color for names, matching original image */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.quote {
+    font-size: 1.05em;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic; /* Emphasize the quote */
+}
+
+.author-title {
+    font-size: 0.9em;
+    color: #777;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .testimonial-card {
+        max-width: 45%; /* Allow two cards per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+    .testimonial-card {
+        max-width: 100%; /* Stack cards vertically on small screens */
+        margin: 0 auto; /* Center individual cards */
+        padding: 25px;
+    }
+    .profile-avatar {
+        width: 70px;
+        height: 70px;
+    }
+    .profile-avatar i {
+        font-size: 3em;
+    }
+    .author-name {
+        font-size: 1.4em;
+    }
+    .quote {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-section h2 {
+        font-size: 2em;
+    }
+    .testimonial-card {
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-logo img {
+    height: 80px;
+    width: auto;
+}
+
+.footer-links,
+.footer-contact,
+.footer-social {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+    color: #f57c00; /* Orange headings */
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-contact p {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f57c00;
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: #f57c00;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #f57c00;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-social a {
+        margin: 0 10px;
+    }
+}
+
+
+
+
+
+
+
+/* CSS for the Why Join NSBE Section */
+
+.why-join-nsbe-section {
+    padding: 80px 20px;
+    background-color: #f8f8f8; /* Light background, similar to testimonials */
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-join-header {
+    margin-bottom: 60px;
+}
+
+.why-join-header h2 {
+    font-size: 3em;
+    color: #2F4F4F; /* Dark Slate Gray */
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.why-join-header h2::after {
+    content: '';
+    display: block;
+    width: 100px; /* Underline length */
+    height: 4px;
+    background-color: #f57c00; /* Orange underline */
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.why-join-header p {
+    font-size: 1.15em;
+    color: #555;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 20px auto 0;
+}
+
+.benefits-grid {
+    display: grid; /* Using CSS Grid for a more robust layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 300px min width for cards */
+    gap: 30px; /* Space between cards */
+    justify-content: center; /* Center cards if they don't fill a row */
+}
+
+.benefit-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-icon {
+    font-size: 3em; /* Size of the icon */
+    color: #f57c00; /* Orange accent color */
+    margin-bottom: 20px;
+    display: flex; /* For perfect centering of icon */
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Background circle for icon */
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ffeccf; /* Lighter orange/yellow background for icon */
+}
+
+.benefit-card h3 {
+    font-size: 1.5em;
+    color: #4a7751; /* Dark green, consistent with other headers */
+    margin-bottom: 15px;
+}
+
+.benefit-card p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min-width for smaller screens */
+        gap: 25px;
+    }
+    .why-join-header h2 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-join-nsbe-section {
+        padding: 60px 15px;
+    }
+    .why-join-header h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .why-join-header h2::after {
+        width: 80px;
+        margin-top: 10px;
+    }
+    .why-join-header p {
+        font-size: 1em;
+    }
+    .benefits-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically on small screens */
+        gap: 20px;
+    }
+    .benefit-card {
+        padding: 30px;
+    }
+    .benefit-icon {
+        font-size: 2.5em;
+        width: 70px;
+        height: 70px;
+    }
+    .benefit-card h3 {
+        font-size: 1.3em;
+    }
+    .benefit-card p {
+        font-size: 0.95em;
+    }
+}

@@ -1,0 +1,432 @@
+/* Global Styles & Variables (consistent with previous files) */
+:root {
+    --primary-color: #006747; /* NSBE Green */
+    --secondary-color: #ffc20e; /* NSBE Gold */
+    --text-color: #333;
+    --bg-color: #f4f6f9;
+    --form-bg-color: #e0e0e0; /* Softer background for form */
+    --form-input-bg: #f9f9f9;
+    --button-bg: #00563f; /* Slightly darker green for button */
+    --font-inter: 'Inter', sans-serif;
+    --font-roboto-condensed: 'Roboto Condensed', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-inter);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background-color: #000; /* Black header as seen in some of your provided images */
+    /* Changed height to match index.css and about.css */
+    height: 90px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+    display: flex; /* Added flex for vertical centering of content */
+    align-items: center; /* Vertically center content */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%; /* Make navbar take full height of header */
+    width: 100%;
+    padding: 0 20px; /* Consistent horizontal padding */
+    max-width: 1200px; /* Consistent max-width */
+    margin: 0 auto; /* Center the navbar content */
+}
+
+/* NSBE Logo in Header */
+.header-logo {
+    /* Changed height to match index.css and about.css */
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+/* Desktop Navigation Menu */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0; /* Ensure no default margins interfere */
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    text-transform: capitalize;
+    white-space: nowrap; /* Prevent links from wrapping */
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Mobile Menu Toggle Button (hidden by default on desktop) */
+.menu-icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: none; /* Hidden on desktop */
+    margin-left: auto; /* Pushes the icon to the far right when displayed */
+}
+
+/* Mobile Nav Overlay - Full screen for mobile menu */
+.mobile-nav-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 90px; /* Starts below the header (90px height) */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 90px); /* Fill remaining viewport height */
+    background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
+    z-index: 999;
+    overflow-y: auto; /* Enable scrolling for many links */
+}
+
+.mobile-nav-overlay.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav-overlay .nav-menu-list {
+    list-style: none;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-nav-overlay .nav-menu-list li {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+.mobile-nav-overlay .nav-menu-list li:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-overlay .nav-menu-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    display: block;
+    transition: color 0.3s ease;
+    text-transform: capitalize; /* Consistent capitalization */
+}
+
+.mobile-nav-overlay .nav-menu-list a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* Main Content Styling for Contact Page */
+.contact-main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    padding: 0; /* Remove padding to eliminate space at the top */
+    background-color: var(--bg-color);
+}
+
+.contact-container {
+    display: flex;
+    width: 90%;
+    max-width: 1000px; /* Max width for the entire container */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures rounded corners are applied to children */
+    min-height: 550px; /* Minimum height for the container */
+    margin: 2rem auto; /* Add margin for spacing above/below the container */
+}
+
+.contact-form-section {
+    flex: 1; /* Takes equal space */
+    padding: 2.5rem;
+    background-color: var(--form-bg-color); /* Softer background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners for inputs */
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    background-color: var(--form-input-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 103, 71, 0.2); /* Soft focus glow */
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 100px;
+}
+
+.contact-form .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+.submit-btn {
+    background-color: var(--button-bg);
+    color: white;
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.contact-visual-section {
+    flex: 1; /* Takes equal space */
+    background-image: url('images/diverse-students-collaborating.jpg'); /* Placeholder image, replace with your actual image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.contact-visual-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 103, 71, 0.7); /* NSBE Green with 70% opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-visual-section .overlay-text {
+    color: white;
+    font-family: var(--font-roboto-condensed); /* Use Roboto Condensed for impact */
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    max-width: 80%; /* Ensure text wraps */
+}
+
+
+/* Footer (consistent with previous files) */
+.footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-social-links a {
+    color: #fff; /* Ensures social icons are white and visible */
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social-links a:hover {
+    color: var(--secondary-color);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        height: 70px; /* Adjust header height for mobile */
+    }
+
+    .navbar {
+        padding: 0 15px; /* Adjust padding for smaller screens */
+    }
+
+    .header-logo {
+        height: 50px; /* Adjust logo size for mobile */
+    }
+
+    /* Show mobile menu toggle button */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Hide desktop navigation by default on mobile */
+    .nav-menu {
+        display: none; /* Hidden by default */
+        position: fixed; /* Use fixed for full overlay effect */
+        top: 70px; /* Position directly below the header (70px height) */
+        left: 0;
+        width: 100%;
+        height: calc(100% - 70px); /* Fill remaining viewport height */
+        background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
+        z-index: 999;
+        overflow-y: auto; /* Enable scrolling for many links */
+        flex-direction: column; /* Stack menu items vertically */
+        justify-content: center; /* Center items in the overlay */
+        align-items: center;
+    }
+
+    /* Show mobile navigation when 'active' class is present */
+    .nav-menu.active {
+        display: flex; /* Display when active */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-menu ul li {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu ul li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.8rem 1rem;
+        font-size: 1.1rem;
+        text-transform: capitalize;
+    }
+
+    /* Contact Page Specific Mobile */
+    .contact-container {
+        flex-direction: column; /* Stack sections vertically on mobile */
+        min-height: auto;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 1rem auto; /* Adjust margin for mobile */
+    }
+
+    .contact-form-section {
+        padding: 1.5rem;
+    }
+
+    .contact-form-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-visual-section {
+        min-height: 250px;
+    }
+
+    .contact-visual-section .overlay-text {
+        font-size: 1.8rem;
+    }
+
+    .footer {
+        padding: 0.8rem 0;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo {
+        height: 45px;
+    }
+    .contact-form-section h2 {
+        font-size: 1.4rem;
+    }
+    .contact-visual-section .overlay-text {
+        font-size: 1.5rem;
+    }
+    .submit-btn {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+}

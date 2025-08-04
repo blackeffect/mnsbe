@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - Mankato NSBE</title>
+    <!-- Link to your main stylesheet -->
+
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="navbar container">
+            <!-- NSBE Mankato Title - Always present, positioned by CSS -->
+            <div class="nsbe-mankato-title">
+                <strong>NSBE Mankato</strong>
+            </div>
+
+            <!-- Mobile Menu Toggle Button - Visible only on mobile -->
+            <button id="menu-toggle" class="menu-icon" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Navigation Links - Desktop and Mobile (toggled by JS) -->
+            <nav class="nav-menu" id="nav-links">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="join-us.html" class="nav-link">Instructions</a></li>
+                    <li><a href="https://mavcentral.mnsu.edu/nsbe/club_signup" target="_blank" class="nav-link">Mav Central</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="instructions" class="section">
+            <div class="container">
+                <h3 class="section-title">Join NSBE Mankato Chapter</h3>
+                <p class="section-subtitle">Take these steps to become an official member of the NSBE Mankato community:</p>
+                <ol class="instructions-list">
+                    <li>Visit <a href="https://mavcentral.mnsu.edu/login_only" target="_blank"><strong id="mavCentralLogin" >Mav Central</strong></a>.</li>
+                    <li>Click <strong>"Student/Faculty/Staff Sign In"</strong> or sign in as a Guest or Community Partner.</li>
+                    <li>Navigate to <strong>Groups</strong> in the top menu.</li>
+                    <li>Search for <strong>“National Society of Black Engineers”</strong>.</li>
+                    <li>Click <strong>Join Group</strong>, then confirm by clicking <strong>Join</strong>.</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mankato National Society of Black Engineers — All Rights Reserved</p>
+            <div class="footer-social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+
+                // Close menu if a link is clicked (optional, good for single-page apps)
+                navLinks.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+
+<style>
+    /* Global Styles */
+:root {
+    --primary-color: #006747; /* NSBE Green */
+    --secondary-color: #ffc20e; /* NSBE Gold */
+    --text-color: #333;
+    --bg-color: #f4f6f9;
+    --font: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    display: flex;
+    flex-direction: column; /* Allow main content to push footer down */
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-color);
+   /*  padding: 1.2rem 0; /* Slightly increased padding for height */ 
+    padding: 1.2rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Needed for absolute positioning of mobile menu */
+    z-index: 1000; /* Ensure header is on top */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens if needed */
+}
+
+/* NSBE Mankato Title */
+.nsbe-mankato-title {
+    color: white;
+    font-size: 1.6rem; /* Increased font size for prominence */
+    font-weight: 700; /* Bolder */
+    white-space: nowrap; /* Prevent wrapping */
+    padding: 0.5rem 0; /* Add some padding */
+}
+
+/* Desktop Navigation Menu */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem; /* Increased gap for more spacing between links */
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0; /* Add padding for better touch targets */
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Mobile Menu Toggle Button */
+.menu-icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem; /* Larger icon for mobile */
+    cursor: pointer;
+    padding: 0.5rem;
+    display: none; /* Hidden by default on desktop */
+}
+
+/* Main content pushes footer down */
+main {
+    flex-grow: 1; /* This makes the main content take up available space */
+}
+
+/* Section - Updated for background image */
+.section {
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Ensure this path is correct for your image */
+    background-image: url('images/homepage_archwalkthroug_herodesktop_1920.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15; /* Slightly reduced opacity for better text clarity */
+    z-index: -1;
+}
+
+/* Ensure text is clearly visible on top of the background */
+.section-title,
+.section-subtitle,
+.instructions-list li,
+.instructions-list li strong, /* Added strong for clarity */
+.instructions-list li a {
+    position: relative;
+    z-index: 2;
+    color: #333; /* Default text color, adjust if needed for contrast */
+    /* text-shadow: 0 0 2px rgba(255, 255, 255, 0.7); /* Optional: subtle shadow for more contrast */
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 3rem; /* Larger title to match screenshot */
+}
+
+.section-subtitle {
+    color: #555;
+    margin-bottom: 2rem;
+    font-size: 1.2rem; /* Slightly larger subtitle */
+}
+
+.instructions-list {
+    list-style-position: inside;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 1.5rem; /* Indent list items slightly */
+}
+
+.instructions-list li {
+    margin: 1rem 0;
+    font-size: 1.05rem;
+    line-height: 1.8; /* Improve readability */
+}
+
+/* Specific link styling for Mav Central */
+#mavCentralLogin {
+  /* Default appearance for this specific link */
+  color: #06304ab8; /* Blue color for the link */
+  text-decoration: none;
+  cursor: pointer; /* Ensures the cursor is a pointer when hovering over the link */
+}
+
+#mavCentralLogin:hover {
+  /* Style when the cursor touches (hovers over) this specific link */
+  color: #ff7b00c6; /* Red color on hover */
+  text-decoration: none; /* Optionally remove the underline on hover */
+}
+
+/* Footer */
+.footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem 0; /* Increased padding */
+    font-size: 0.9rem;
+    margin-top: 0; /* Space above footer */
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row; /* Keep title and button on one row */
+        justify-content: space-between; /* Space out title and button */
+        align-items: center;
+    }
+
+    /* Show mobile menu toggle button */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Hide desktop navigation by default on mobile */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        background-color: var(--primary-color); /* Match header background */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    /* Show mobile navigation when 'active' class is present */
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0; /* Remove gap for vertical stacking */
+    }
+
+    .nav-menu ul li {
+        margin: 0.5rem 0; /* Add vertical spacing for mobile links */
+    }
+
+    .nav-link {
+        display: block; /* Make links full width for easier tapping */
+        padding: 0.8rem 1rem;
+    }
+
+    /* Adjust font sizes for smaller screens */
+    .nsbe-mankato-title {
+        font-size: 1.3rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    .instructions-list {
+        padding: 0 1rem; /* Adjust padding for mobile */
+    }
+}
+</style>
+
+</html>
+
+

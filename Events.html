@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upcoming Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #4f46e5;
+      --bg-light: #f9fafb;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --card-bg: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    header {
+      /* background: url('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat; */
+      background: url('images/events and socials/467305628_594131493052782_2775843680247724296_n.jpg') center/cover no-repeat;
+      padding: 80px 20px;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #e5e7eb;
+    }
+
+    .events-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .filter {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .filter select {
+      padding: 8px 12px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .timeline-item {
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -11px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+    }
+
+    .timeline-date {
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+    }
+
+    .timeline-content {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-4px);
+    }
+
+    .timeline-content h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      color: var(--text-dark);
+    }
+
+    .timeline-content p {
+      color: var(--text-light);
+      margin: 10px 0 20px;
+    }
+
+    .read-more {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .read-more:hover {
+      background-color: #3730a3;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Upcoming Events</h1>
+    <p>Stay updated with what’s happening in our community</p>
+  </header>
+
+  <!-- Main Events Section -->
+  <section class="events-container">
+
+    <!-- Filter -->
+    <div class="filter">
+      <label for="category">Filter by: </label>
+      <select id="category">
+        <option>All</option>
+        <option>Workshops</option>
+        <option>Webinars</option>
+        <option>Seminars</option>
+        <option>Career Fairs</option>
+      </select>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">July 1, 2025</div>
+        <div class="timeline-content">
+          <h3>Board Meeting</h3>
+          <p>The new board is focused on growing the chapter, improving member engagement, and delivering impactful events.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">August 8, 2025</div>
+        <div class="timeline-content">
+          <h3>🍂 Fall Kickoff: Club Meet & Greet</h3>
+          <p>Meet new members, reconnect with old friends, and discover upcoming opportunities!</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">August 8, 2025</div>
+        <div class="timeline-content">
+          <h3>Mentorship Connect</h3>
+          <p>Get paired with a mentor for guidance in academics, career, and leadership. Make connections that matter.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">August 20, 2025</div>
+        <div class="timeline-content">
+          <h3>🕹️ FIFA Showdown</h3>
+          <p>Compete for prizes and glory in our epic FIFA tournament. <a href="#" style="color:#4f46e5;">Sign up here</a>.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">September 5, 2025</div>
+        <div class="timeline-content">
+          <h3>🧠 Tech Talks & Tacos</h3>
+          <p>Explore trending tech topics over delicious tacos. Learn and connect with tech enthusiasts.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">September 15, 2025</div>
+        <div class="timeline-content">
+          <h3>💼 Resume & LinkedIn Power Hour</h3>
+          <p>Get pro tips on improving your resume and LinkedIn to stand out in job searches.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

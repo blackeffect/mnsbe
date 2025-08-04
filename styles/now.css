@@ -1,0 +1,264 @@
+
+/* Global Styles */
+:root {
+    --primary-color: #006747; /* NSBE Green */
+    --secondary-color: #ffc20e; /* NSBE Gold */
+    --text-color: #333;
+    --bg-color: #f4f6f9;
+    --font: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    display: flex;
+    flex-direction: column; /* Allow main content to push footer down */
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Needed for absolute positioning of mobile menu */
+    z-index: 1000; /* Ensure header is on top */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens if needed */
+}
+
+/* NSBE Mankato Title */
+.nsbe-mankato-title {
+    color: white;
+    font-size: 1.5rem; /* Increased font size for prominence */
+    font-weight: 700; /* Bolder */
+    white-space: nowrap; /* Prevent wrapping */
+    padding: 0.5rem 0; /* Add some padding */
+}
+
+/* Desktop Navigation Menu */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0; /* Add padding for better touch targets */
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Mobile Menu Toggle Button */
+.menu-icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem; /* Larger icon for mobile */
+    cursor: pointer;
+    padding: 0.5rem;
+    display: none; /* Hidden by default on desktop */
+}
+
+/* Main content pushes footer down */
+main {
+    flex-grow: 1; /* This makes the main content take up available space */
+}
+
+/* Section - Updated for background image */
+.section {
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/homepage_archwalkthroug_herodesktop_1920.jpg'); /* REPLACE with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Ensure text is clearly visible on top of the background */
+.section-title,
+.section-subtitle,
+.instructions-list li,
+.instructions-list li a {
+    position: relative;
+    z-index: 2;
+    color: #333; /* Default text color, adjust if needed for contrast */
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2.5rem; /* Larger title */
+}
+
+.section-subtitle {
+    color: #555;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.instructions-list {
+    list-style-position: inside;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 1.5rem; /* Indent list items slightly */
+}
+
+.instructions-list li {
+    margin: 1rem 0;
+    font-size: 1.05rem;
+    line-height: 1.8; /* Improve readability */
+}
+
+/* Specific link styling for Mav Central */
+#mavCentralLogin {
+    color: var(--primary-color); /* Use primary color for consistency */
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600; /* Make it bold as in the HTML */
+    transition: color 0.3s ease;
+}
+
+#mavCentralLogin:hover {
+    color: var(--secondary-color); /* Change to secondary color on hover */
+    text-decoration: none;
+}
+
+/* Footer */
+.footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem 0; /* Increased padding */
+    font-size: 0.9rem;
+    margin-top: 2rem; /* Space above footer */
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row; /* Keep title and button on one row */
+        justify-content: space-between; /* Space out title and button */
+        align-items: center;
+    }
+
+    /* Show mobile menu toggle button */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Hide desktop navigation by default on mobile */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        background-color: var(--primary-color); /* Match header background */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    /* Show mobile navigation when 'active' class is present */
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0; /* Remove gap for vertical stacking */
+    }
+
+    .nav-menu ul li {
+        margin: 0.5rem 0; /* Add vertical spacing for mobile links */
+    }
+
+    .nav-link {
+        display: block; /* Make links full width for easier tapping */
+        padding: 0.8rem 1rem;
+    }
+
+    /* Adjust font sizes for smaller screens */
+    .nsbe-mankato-title {
+        font-size: 1.3rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    .instructions-list {
+        padding: 0 1rem; /* Adjust padding for mobile */
+    }
+}
+
+

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MNSBE- Home page </title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="navbar container">
+            <div class="nsbe-mankato-title">
+                <a href="https://nsbe.org/" class="header-logo-link" aria-label="Go to Home Page" target="_blank">
+                    <img src="images/nsbeWhiteLogo.png" alt="NSBE Mankato Logo" class="header-logo">
+                </a>
+            </div>
+
+            <button id="menu-toggle" class="menu-icon" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu" id="nav-links">
+                <ul>
+                    <li><a href="index.html" class="nav-link">home</a></li>
+                    <li><a href="join-us.html" class="nav-link">join us</a></li>
+                    <li><a href="program.html" class="nav-link">program</a></li>
+                    <li><a href="donate.html" class="nav-link">donate</a></li>
+                    <li><a href="volunteer.html" class="nav-link">volunteer</a></li>
+                    <li><a href="store.html" class="nav-link">store</a></li>
+                    <li><a href="blackeffect.html" class="nav-link">black effect</a></li>
+                    <li><a href="contact.html" class="nav-link">contact</a></li>
+                    <li><a href="about.html" class="nav-link">who we are</a></li>
+                </ul>
+            </nav>
+            <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+
+            // Optional: Close menu when a link is clicked
+            navLinks.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+    });
+</script>
+        </div>
+    </header>
+
+    <section class="main-content-section">
+        <div class="slideshow-with-side-content">
+            <div class="slideshow-wrapper-center">
+                <div class="slideshow-container">
+
+                    <div class="slides fade">
+                        <a href="#">
+                            <img src="images/slideshow/WhatsApp Image 2025-07-17 at 23.02.59_69d021d1.jpg" alt="Slide 1">
+                            
+                        </a>
+                    </div>
+                    <div class="slides fade">
+                        <a href="https://convention.nsbe.org/" target="_blank">
+                            <img src="images/slideshow/1746154529707.jpeg" alt="Slide 2">
+                            <span class="slide-text">Upcoming NSBE General Conference</span>
+                        </a>
+                    </div>
+                    <div class="slides fade">
+                        <a href="#">
+                            <img src="images/slideshow/1732643727390.jpeg " alt="Slide 3">
+                            <span class="slide-text">Professional Development Workshops</span>
+                        </a>
+                    </div>
+                    <div class="slides fade">
+                        <a href="#">
+                            <img src="images/slideshow/1744831787766.jpeg" alt="Slide 4">
+                            <span class="slide-text">2025 NSBE Region IV Gala </span>
+                            <!-- 2025 Student Leadership Awards! Mentorship Program Enrollment -->
+                        </a>
+                    </div>
+                    <div class="slides fade">
+                        <a href="#">
+                            <img src="images/slideshow/1741805927708.jpeg" alt="Slide 5">
+                            <span class="slide-text">Networking Event with Industry Leaders</span>
+                        </a>
+                    </div>
+                    <div class="slides fade">
+                        <a href="#">
+                            <img src="images/slideshow/WhatsApp Image 2025-07-24 at 12.36.07_7b88c1c8.jpg" alt="Slide 6">
+                            <span class="slide-text">Community Outreach Program</span>
+                        </a>
+                    </div>
+
+                  
+
+                    <div class="slides fade">
+                        <video autoplay muted loop>
+                            <source src="images/slide6.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+
+                <div class="dot-container">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+            </div>
+
+            <div class="onTheRightOfMySection info-block">
+                <div class="chapter-info-block">
+                    <img src="images/Logo 2.png" alt="NSBE Logo">
+                    <h3>Mankato Chapter</h3>
+                </div>
+                <div class="black-excellence-block">
+                    <h4><b>Black Excellence</b></h4>
+                    <p>Supporting Black Engineers in Advocacy, Education and Career Advancement</p>
+                </div>
+                <div class="mnsu-logo mnsu-info-block">
+                    <img src="images/msu-logo.svg" alt="minnesota state university" />
+                </div>
+            </div>
+        </div>
+
+        <div class="mission-statement">
+            <strong><h2><b>Mission</b></h2></strong>
+            <p>"To increase the number of culturally responsible black engineers who excel academically, succeed professionally and positively impact the community."</p>
+        </div>
+
+        <div>
+            </div>
+    
+    </section>
+    <section class="association-section">
+    <div class="left-content-box">
+        <div class="join-box">
+            <h2><a href="MNSBE\join-us.html">Join</a> NSBE Mankato</h2>
+            <img src="images\473664784_1772082826944724_1865594269922211683_n.jpg" alt="NSBE Mankato Chapter Members" class="join-box-image">
+        </div>
+    </div>
+    <div class="right-content-box">
+        <h3>About Our Association</h3>
+        <p>
+            The National Society of Black Engineers (NSBE) at Minnesota State University, Mankato is a vibrant and dynamic organization known for its commitment to academic excellence, cultural empowerment, and community engagement. As one of the most active and impactful student-led organizations on campus, NSBE creates meaningful opportunities for students to grow as engineers, scientists, technologists, and problem-solvers. Our chapter was honored as the Outstanding RSO of the Year at the 2025 Student Leadership Awards, a testament to our dedication and influence both on campus and in the greater Mankato community.
+        </p>
+        <p>
+            The NSBE Mankato chapter is dedicated to upholding the mission at Minnesota State University, Mankato and within the local community. We strive to create a supportive environment for our members, fostering academic excellence and providing opportunities for networking, skill-building, and community engagement. Our goal is to empower the next generation of Black leaders in STEM fields.
+        </p>
+    </div>
+    </section>
+
+    <section class="events-section">
+    <h2>Our Next Event</h2>
+
+    <div class="featured-event">
+        <div class="event-card">
+            <img src="images/events and socials/461302157_1051238370343545_8988006293474908660_n.jpg" alt="Description of Featured Event" class="event-picture">
+            <div class="event-details">
+                <h3>🍂 Fall Kickoff: Club Meet & Greet</h3>
+                <p class="event-date-venue">
+                    <strong>Date:</strong>  september 18, 2025<br>
+                    <strong>Venue:</strong> Minnesota State University, Mankato - CSU Ballroom
+                </p>
+                <p class="event-description">
+                    Start the semester strong with NSBE at our annual Fall Kickoff: Club Meet & Greet! This is the perfect opportunity for new and returning students to get connected, build community, get info on how to become a member, getting  involved and learn more about what NSBE has planned for the year ahead.
+                    <br>Whether you're majoring in engineering, computer science, technology, or just passionate about STEM and equity, everyone is welcome to come out, connect, and be inspired. Light refreshments will be provided! 
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="all-events-link-container">
+        <a href="Events.html" class="all-events-button">Check out all upcoming events &rarr;</a>
+    </div>
+    </section>
+
+    <section class="volunteer-section">
+    <div class="volunteer-content">
+        <h2>Make a Difference: Volunteer with NSBE Mankato!</h2>
+        <p>
+            Volunteers are the backbone of our community, helping us achieve our mission to empower aspiring Black engineers. Whether you have a few hours a week or can help with specific events, your contribution makes a significant impact. Join us in fostering academic excellence, professional development, and community engagement.
+        </p>
+        <a href="volunteer.html" class="volunteer-button">Learn More & Volunteer &rarr;</a>
+    </div>
+    </section>
+
+
+    <section class="action-section shop-section">
+<div class="action-content">
+<h2>Shop NSBE Mankato Gear!</h2>
+<p>
+Show your support and represent NSBE Mankato with our exclusive merchandise! From hoodies to accessories, every purchase helps fund our programs and initiatives, directly benefiting our members and community outreach efforts.
+</p>
+<img src="products\MnsbeBlackTshirts\474086134_17907067806068174_4848235514302179512_n.jpg" alt="NSBE Mankato T-Shirt Design" class="section-image shop-image">
+<a href="store.html" class="action-button shop-button">Browse Our Store →</a>
+</div>
+</section>
+
+<section class="action-section donate-section">
+<div class="action-content">
+<h2>Support Our Mission: Donate Today</h2>
+<p>
+Your generous contributions enable NSBE Mankato to provide scholarships, host impactful events, and offer valuable resources to our aspiring Black engineers. Every donation, big or small, makes a significant difference in fostering their academic and professional success.
+</p>
+<img src="path/to/your/cash-app-scan.png" alt="Scan to Donate via Cash App" class="section-image donate-image">
+<a href="donate.html" class="action-button donate-button">Make a Donation →</a>
+</div>
+</section>
+
+<section class="action-section sponsor-section">
+    <div class="action-content">
+        <h2>Partner with Us: Become a Sponsor</h2>
+        <p>
+            Invest in the next generation of Black technical leaders by becoming an NSBE Mankato sponsor. We offer various sponsorship packages designed to align with your organization's goals, providing unique opportunities for visibility, recruitment, and community engagement.
+        </p>
+        <a href="homePageLinks\sponsorshipPackages.html" class="action-button sponsor-button">View Sponsorship Packages &rarr;</a>
+    </div>
+</section>
+
+
+
+
+
+
+    <section class="key-dates-section" style="background-color: #000; color: #fff; padding: 50px 0; text-align: center;">
+        <h2 style="font-size: 2.5em; margin-bottom: 50px; text-transform: uppercase;">KEY DATES</h2>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <h3 style="margin-bottom: 15px; font-size: 1.2em;">september 18</h3>
+                <img src="http://googleusercontent.com/file_content/0" alt="Code challenge icon" style="width: 80px; height: 80px; margin-bottom: 10px; filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(282deg) brightness(103%) contrast(100%);">
+                <p style="font-size: 1em;">Fall Kickoff: Club Meet & Greet</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <h3 style="margin-bottom: 15px; font-size: 1.2em;">september 4</h3>
+                <img src="http://googleusercontent.com/file_content/0" alt="Submissions open icon" style="width: 80px; height: 80px; margin-bottom: 10px; filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(282deg) brightness(103%) contrast(100%);">
+                <p style="font-size: 1em;">Fall calender Presentation</p>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <h3 style="margin-bottom: 15px; font-size: 1.2em;">MAY 5 - MAY 7</h3>
+                <img src="http://googleusercontent.com/file_content/0" alt="Announcement icon" style="width: 80px; height: 80px; margin-bottom: 10px; filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(282deg) brightness(103%) contrast(100%);">
+                <p style="font-size: 1em;">Register for the conference <a href="#" style="color: #FFC000 ; text-decoration: none;">eligible candidates</a></p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <h3 style="margin-bottom: 15px; font-size: 1.2em;">APRIL 30</h3>
+                <img src="http://googleusercontent.com/file_content/0" alt="Submissions close icon" style="width: 80px; height: 80px; margin-bottom: 10px; filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(282deg) brightness(103%) contrast(100%);">
+                <p style="font-size: 1em;">Regional conference</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <h3 style="margin-bottom: 15px; font-size: 1.2em;">MAY 9</h3>
+                <h2 style="margin-bottom: 10px; font-size: 1.8em; color: #FFC000 ;">Become a sponsor</h2>
+                <p style="font-size: 1em;">Meet Our Sponsers</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section-alt">
+    <div class="contact-header">
+        <h2>Get In Touch With Us</h2>
+        <p>We'd love to hear from you! Reach out to us through the form below or using our direct contact information.</p>
+    </div>
+
+    <div class="contact-info-grid">
+        <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i> <h3>Our Location</h3>
+            <p>Minnesota State University, Mankato<br>Mankato, MN 56001</p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-phone-alt"></i> <h3>Phone Number</h3>
+            <p><a href="tel:+15075551234">(507) 555-1234</a></p> </div>
+        <div class="info-item">
+            <i class="fas fa-envelope"></i> <h3>Email Address</h3>
+            <p><a href="mailto:info@nsbemankato.org">info@nsbemankato.org</a></p> </div>
+    </div>
+
+    <div class="contact-form-wrapper">
+        <h3>Send Us a Message</h3>
+        <form id="contact-form" action="#" method="POST">
+            <div class="form-row">
+                <input type="text" id="altFullName" name="fullName" placeholder="Full Name" required>
+                <input type="email" id="altEmail" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-row">
+                <input type="tel" id="altPhone" name="phone" placeholder="Phone Number (optional)">
+                <input type="text" id="altSubject" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-row">
+                <textarea id="altMessage" name="message" placeholder="Your Message" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="send-message-button-alt">Send Message</button>
+        </form>
+
+        <!-- Custom Alert Modal -->
+    <div id="customAlert" class="alert-modal" style="display: none;">
+    <div class="alert-content">
+        <h3>Thank You!</h3>
+        <p>Your message has been sent successfully. We will get back to you shortly.</p>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+    </div>
+    <!-- script for contact  -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init('17GxK60UNkgU2wjmY'); // Replace with your actual public key
+  })();
+
+  const form = document.getElementById('contact-form');
+  const customAlert = document.getElementById('customAlert');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    try {
+      await emailjs.sendForm('service_dfbcoub', 'template_hisfzch', form);
+      customAlert.style.display = 'flex'; // Show thank-you modal
+      form.reset();
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      alert('Oops! Something went wrong while sending your message.');
+    }
+  });
+
+  function closeAlert() {
+    customAlert.style.display = 'none';
+  }
+</script>
+
+
+    </div>
+</section>
+<section class="why-join-nsbe-section">
+    <div class="why-join-header">
+        <h2>Why Join NSBE Mankato?</h2>
+        <p>
+            Becoming a member of the National Society of Black Engineers (NSBE) Mankato Chapter offers unparalleled opportunities for growth, support, and success. Here are just a few reasons why you should join our thriving community:
+        </p>
+    </div>
+
+    <div class="benefits-grid">
+        <div class="benefit-card">
+            <div class="benefit-icon">
+                <i class="fas fa-briefcase"></i> </div>
+            <h3>Professional & Career Growth</h3>
+            <p>
+                Access exclusive career fairs, internship opportunities, resume workshops, and mock interviews. Connect with industry leaders and secure your path to a successful engineering career.
+            </p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-icon">
+                <i class="fas fa-graduation-cap"></i> </div>
+            <h3>Academic Support & Excellence</h3>
+            <p>
+                Benefit from tutoring sessions, study groups, and scholarship opportunities designed to help you excel in your coursework and achieve academic success.
+            </p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-icon">
+                <i class="fas fa-users"></i> </div>
+            <h3>Strong Community & Networking</h3>
+            <p>
+                Join a supportive family of like-minded students and professionals. Build lasting friendships, find mentors, and expand your professional network within the engineering field.
+            </p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-icon">
+                <i class="fas fa-star"></i> </div>
+            <h3>Leadership & Skill Development</h3>
+            <p>
+                Take on leadership roles within the chapter, develop project management skills, and enhance your communication abilities through various initiatives and events.
+            </p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-icon">
+                <i class="fas fa-handshake"></i> </div>
+            <h3>Community Outreach & Impact</h3>
+            <p>
+                Participate in impactful STEM initiatives, volunteer events, and pre-college programs that inspire the next generation of engineers and give back to the community.
+            </p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-icon">
+                <i class="fas fa-globe-americas"></i> </div>
+            <h3>National Convention & Events</h3>
+            <p>
+                Attend regional and national conventions, conferences, and competitions, offering unparalleled exposure, learning, and networking opportunities on a larger scale.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section">
+    <h2>Student Testimonials</h2> <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <div class="profile-avatar">
+                <i class="fas fa-user-circle"></i> </div>
+            <h3 class="author-name">Joe Moriwa</h3>
+            <p class="quote">
+                "NSBE has been a game-changer for me. It's more than just an organization—it's a community that pushes you to grow, lead, and connect with opportunities you wouldn't find anywhere else. Being part of NSBE has truly shaped my college and career journey."
+            </p>
+            <p class="author-title">— Joe Moriwa, Student Member</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="profile-avatar">
+                <i class="fas fa-user-circle"></i> </div>
+            <h3 class="author-name">Brice</h3>
+            <p class="quote">
+                "NSBE has been a game-changer for me. It's more than just an organization—it's a community that pushes you to grow, lead, and connect with opportunities you wouldn't find anywhere else. Being part of NSBE has truly shaped my college and career journey."
+            </p>
+            <p class="author-title">— Brice, Student Member</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="profile-avatar">
+                <i class="fas fa-user-circle"></i> </div>
+            <h3 class="author-name">Heldana</h3>
+            <p class="quote">
+                "NSBE has been a game-changer for me. It's more than just an organization—it's a community that pushes you to grow, lead, and connect with opportunities you wouldn't find anywhere else. Being part of NSBE has truly shaped my college and career journey."
+            </p>
+            <p class="author-title">— Heldana, Student Member</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+    
+<script src="Scripts\try.js"></script>
+
+
+</body>
+
+<footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/nsbeWhiteLogo.png" alt="NSBE Logo">
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="contactMe.html">Contact</a></li>
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, Mankato, MN</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@nsbemankato.org</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="https://tr.ee/4lETv0ggX8" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                <a href="https://tr.ee/wThosfaK2e" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NSBE Mankato Chapter. All Rights Reserved.</p>
+        </div>
+</footer>
+
+
+
+</html>

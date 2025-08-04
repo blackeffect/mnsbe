@@ -1,0 +1,450 @@
+/* Universal Box-Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #000;
+    height: 90px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* NSBE Logo in Header */
+.header-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+/* Desktop Navigation Menu */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color, #f57c00); /* Fallback to orange if --secondary-color not defined */
+}
+
+/* Header Icons (Search, User, Cart) */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between icons */
+    margin-left: 20px; /* Space from the navigation links */
+}
+
+.header-icons .icon-link {
+    color: white;
+    font-size: 1.3rem; /* Adjust icon size */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative; /* For cart count positioning */
+}
+
+.header-icons .icon-link:hover {
+    color: var(--secondary-color, #f57c00);
+}
+
+.cart-icon {
+    position: relative;
+    display: flex;
+    align-items: center; /* Vertically align icon and count */
+}
+
+.cart-count {
+    background-color: #f57c00; /* NSBE Orange for the count bubble */
+    color: white;
+    font-size: 0.7em;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -8px; /* Adjust vertical position */
+    right: -10px; /* Adjust horizontal position */
+    line-height: 1; /* Prevent extra height from padding */
+    min-width: 18px; /* Ensure it's a circle even with single digit */
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Mobile Menu Toggle Button (hidden by default on desktop) */
+.menu-icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: none; /* Hidden on desktop */
+    margin-left: auto; /* Pushes the icon to the far right when displayed */
+}
+
+/* Mobile Nav Overlay - Full screen for mobile menu */
+.mobile-nav-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 90px; /* Starts below the header (90px height) */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 90px); /* Fill remaining viewport height */
+    background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
+    z-index: 999;
+    overflow-y: auto; /* Enable scrolling for many links */
+}
+
+.mobile-nav-overlay.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav-overlay .nav-menu-list {
+    list-style: none;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-nav-overlay .nav-menu-list li {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+.mobile-nav-overlay .nav-menu-list li:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-overlay .nav-menu-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    display: block;
+    transition: color 0.3s ease;
+    text-transform: capitalize;
+}
+
+.mobile-nav-overlay .nav-menu-list a:hover {
+    color: var(--secondary-color, #f57c00);
+}
+
+/* Store Page Specific Styles */
+.store-hero {
+    background-color: #f57c00; /* NSBE Orange */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.store-hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.store-hero p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 80px auto; /* Center the grid and add bottom margin */
+    padding: 0 20px;
+}
+
+.product-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: 200px; /* Fixed height for product images */
+    object-fit: contain; /* Ensure image fits without cropping */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #eee; /* Placeholder background for images */
+}
+
+.product-item h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-item .price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #f57c00; /* Orange price */
+    margin-bottom: 20px;
+}
+
+.add-to-cart-btn {
+    background-color: #007bff; /* Blue button, you can change to NSBE orange if preferred */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-logo img {
+    height: 80px;
+    width: auto;
+}
+
+.footer-links,
+.footer-contact,
+.footer-social {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+    color: #f57c00; /* Orange headings */
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-contact p {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f57c00;
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: #f57c00;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #f57c00;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        height: 70px; /* Adjust header height for mobile */
+    }
+
+    .navbar {
+        padding: 0 15px; /* Adjust padding for smaller screens */
+    }
+
+    .header-logo {
+        height: 50px; /* Adjust logo size for mobile */
+    }
+
+    /* Show mobile menu toggle button */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Hide desktop navigation by default on mobile */
+    .nav-menu {
+        display: none; /* Hidden by default */
+        position: fixed; /* Use fixed for full overlay effect */
+        top: 70px; /* Position directly below the header (70px height) */
+        left: 0;
+        width: 100%;
+        height: calc(100% - 70px); /* Fill remaining viewport height */
+        background-color: rgba(0, 0, 0, 0.95); /* Dark overlay */
+        z-index: 999;
+        overflow-y: auto; /* Enable scrolling for many links */
+        flex-direction: column; /* Stack menu items vertically */
+        justify-content: center; /* Center items in the overlay */
+        align-items: center;
+    }
+
+    /* Show mobile navigation when 'active' class is present */
+    .nav-menu.active {
+        display: flex; /* Display when active */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        list-style: none; /* Ensure no default list bullets */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+    }
+
+    .nav-menu ul li {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Thin white line for separation */
+        padding: 15px 0; /* Add vertical padding for spacing */
+        text-align: center; /* Center the text */
+    }
+
+    .nav-menu ul li:last-child {
+        border-bottom: none; /* No border for the last item */
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.8rem 1rem;
+        font-size: 1.1rem;
+        text-transform: capitalize;
+        color: white; /* Ensure links are white in the mobile menu */
+        text-decoration: none; /* Remove underline by default */
+    }
+
+    .nav-link:hover {
+        color: var(--secondary-color, #f57c00);
+    }
+
+    /* Hide header icons on mobile, they will be in the overlay */
+    .header-icons {
+        display: none;
+    }
+
+    /* Style for icons within the mobile overlay */
+    .mobile-nav-overlay .nav-menu-list .mobile-icon-item a {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center icons with text */
+        gap: 10px;
+        font-size: 1.5rem; /* Larger font for mobile */
+        padding: 15px 20px;
+    }
+
+    .mobile-nav-overlay .nav-menu-list .mobile-icon-item .cart-count {
+        position: static; /* Reset positioning */
+        margin-left: 5px; /* Space from 'Cart' text */
+        top: auto;
+        right: auto;
+        padding: 4px 8px; /* Slightly larger padding for mobile */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-social a {
+        margin: 0 10px;
+    }
+}
