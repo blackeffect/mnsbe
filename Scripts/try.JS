@@ -1,86 +1,3 @@
-/* // Slideshow Script (ensure this part is correct and working)
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("slides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
-
-// Auto-advance every 4 seconds
-setInterval(() => {
-    plusSlides(1);
-}, 4000);
-
-
-// NEW: On-scroll reveal animations
-document.addEventListener('DOMContentLoaded', () => {
-    const missionSection = document.querySelector('.mission-statement');
-    const onLeftSection = document.querySelector('.onTheLeftofMySection');
-    const onRightSection = document.querySelector('.onTheRightOfMySection');
-
-    const elementsToObserve = [];
-    if (missionSection) elementsToObserve.push(missionSection);
-    if (onLeftSection) elementsToObserve.push(onLeftSection);
-    if (onRightSection) elementsToObserve.push(onRightSection);
-
-    if (elementsToObserve.length === 0) {
-        console.warn("No animatable elements found. Scroll animations won't apply.");
-        return;
-    }
-
-    const observerOptions = {
-        root: null, // relative to the viewport
-        rootMargin: '0px',
-        threshold: 0.1 // Trigger when 10% of the element is visible
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Stop observing after animation for one-time effect
-            }
-        });
-    }, observerOptions);
-
-    // Observe each relevant element
-    elementsToObserve.forEach(element => {
-        observer.observe(element);
-    });
-});
-
-
-
-
-
- */
-
-
-
-
-
-
-
 // Ensure the DOM is fully loaded before running scripts
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -170,5 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // The "Testimonials Carousel Script" section has been removed entirely.
     // This ensures that the CSS controls the layout of testimonial items,
     // allowing all of them to appear simultaneously.
+
 
 }); // End of DOMContentLoaded
