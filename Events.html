@@ -22,7 +22,6 @@
     }
 
     header {
-      /* background: url('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat; */
       background: url('images/events and socials/467305628_594131493052782_2775843680247724296_n.jpg') center/cover no-repeat;
       padding: 80px 20px;
       color: white;
@@ -57,9 +56,11 @@
       border: 1px solid #d1d5db;
     }
 
+    /* Corrected CSS for proper alignment */
     .timeline {
       position: relative;
-      padding-left: 30px;
+      /* Increased padding to prevent overlap with the date text */
+      padding-left: 30px; 
       border-left: 4px solid var(--primary-color);
     }
 
@@ -70,9 +71,10 @@
 
     .timeline-item::before {
       content: '';
-      position: absolute;
-      left: -11px;
+      /* Adjusting left position to align the dot with the line */
+      left: -11px; 
       top: 0;
+      position: absolute;
       width: 20px;
       height: 20px;
       background-color: var(--primary-color);
@@ -83,6 +85,8 @@
       font-weight: 600;
       color: var(--primary-color);
       margin-bottom: 8px;
+      /* Adding a left margin to push the text away from the circle */
+      margin-left: 20px; 
     }
 
     .timeline-content {
@@ -122,6 +126,32 @@
     .read-more:hover {
       background-color: #3730a3;
     }
+    
+    /* CSS for the expandable details */
+    .full-details {
+        display: none;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #e5e7eb;
+    }
+    .full-details.visible {
+        display: block;
+    }
+    .full-details h4 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        color: var(--text-dark);
+    }
+    .full-details ul {
+        margin: 0;
+        padding-left: 20px;
+        list-style-type: disc;
+        color: var(--text-light);
+    }
+    .full-details li {
+        margin-bottom: 5px;
+    }
 
     @media (max-width: 768px) {
       header h1 {
@@ -132,16 +162,13 @@
 </head>
 <body>
 
-  <!-- Hero Section -->
   <header>
     <h1>Upcoming Events</h1>
     <p>Stay updated with what’s happening in our community</p>
   </header>
 
-  <!-- Main Events Section -->
   <section class="events-container">
 
-    <!-- Filter -->
     <div class="filter">
       <label for="category">Filter by: </label>
       <select id="category">
@@ -153,65 +180,185 @@
       </select>
     </div>
 
-    <!-- Timeline -->
     <div class="timeline">
 
       <div class="timeline-item">
-        <div class="timeline-date">July 1, 2025</div>
+        <div class="timeline-date">September 4</div>
         <div class="timeline-content">
-          <h3>Board Meeting</h3>
-          <p>The new board is focused on growing the chapter, improving member engagement, and delivering impactful events.</p>
+          <h3>Club Meet Up and Greet</h3>
+          <p>Meet new members, build connections, and discover upcoming opportunities for the semester.</p>
+          <div class="full-details">
+            <ul>
+              <li>Icebreakers to build connections.</li>
+              <li>Share the NSBE mission, semester goals, and event calendar.</li>
+              <li>Member sign-up form (including interests, majors).</li>
+              <li>Reintroduce the board and available roles.</li>
+              <li>Announce N.S.B.E merch & place orders.</li>
+            </ul>
+            <p><strong>📌 Outcome:</strong> Sense of belonging, increased membership, leadership engagement.</p>
+          </div>
           <a href="#" class="read-more">Read More</a>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">August 8, 2025</div>
+        <div class="timeline-date">September 17</div>
         <div class="timeline-content">
-          <h3>🍂 Fall Kickoff: Club Meet & Greet</h3>
-          <p>Meet new members, reconnect with old friends, and discover upcoming opportunities!</p>
+          <h3>Study Session (in collaboration)</h3>
+          <p>Learn how to study for technical exams, use time blocking, and get peer tips from upperclassmen.</p>
+          <div class="full-details">
+            <ul>
+                <li>**Type:** Academic Development</li>
+                <li>How to study for technical exams, time blocking, and using school resources.</li>
+                <li>Mentorship from upper-class to lower-class students.</li>
+                <li>Reintroduce the board and available leadership roles.</li>
+                <li>Encourage students to work on projects and other extra-curricular activities.</li>
+            </ul>
+            <p><strong>Announcements:</strong> Oct 7 career and internship expo & Oct 23 Dream and explore careers in IT. Next event is the Resume + LinkedIn Workshop.</p>
+            <p><strong>📌 Outcome:</strong> Strong academic habits, higher class engagement, peer support.</p>
+          </div>
           <a href="#" class="read-more">Read More</a>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">August 8, 2025</div>
+        <div class="timeline-date">October 2</div>
         <div class="timeline-content">
-          <h3>Mentorship Connect</h3>
-          <p>Get paired with a mentor for guidance in academics, career, and leadership. Make connections that matter.</p>
+          <h3>Resume + LinkedIn Workshop</h3>
+          <p>Get professional development with a live walk-through on how to write a STEM-focused resume and optimize your LinkedIn profile.</p>
+          <div class="full-details">
+            <ul>
+                <li>**Type:** Professional Development</li>
+                <li>Students bring their current resumes or blank templates.</li>
+                <li>Live walk-through of how to write a STEM-focused resume.</li>
+                <li>How to describe leadership & volunteer experiences.</li>
+                <li>How to create or clean up a LinkedIn profile.</li>
+                <li>Time for peer feedback and review.</li>
+                <li>Invite a rep from Career Services or an alumnus to co-host.</li>
+            </ul>
+            <p><strong>Announcements:</strong> Oct 7 career and internship expo & Oct 23 Dream and explore careers in IT. General details and sign up volunteers for the upcoming outreach event.</p>
+            <p><strong>📌 Outcome:</strong> Career readiness, improved confidence, internship prep.</p>
+          </div>
           <a href="#" class="read-more">Read More</a>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">August 20, 2025</div>
+        <div class="timeline-date">October 15</div>
         <div class="timeline-content">
-          <h3>🕹️ FIFA Showdown</h3>
-          <p>Compete for prizes and glory in our epic FIFA tournament. <a href="#" style="color:#4f46e5;">Sign up here</a>.</p>
+          <h3>Community Outreach Event</h3>
+          <p>Visit a local middle or high school to share college stories and inspire students with STEM topics.</p>
+          <div class="full-details">
+            <ul>
+                <li>**Type:** Outreach / Service</li>
+                <li>A game-style event where participants answer questions about STEM topics (e.g., Kahoot).</li>
+                <li>Time for peer feedback and review.</li>
+                <li>Invite a rep from Career Services or an alumnus to co-host.</li>
+            </ul>
+            <p><strong>Announcements:</strong> Oct 23 Dream and explore careers in IT.</p>
+            <p><strong>📌 Outcome:</strong> Community impact, leadership experience, student visibility.</p>
+          </div>
           <a href="#" class="read-more">Read More</a>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">September 5, 2025</div>
+        <div class="timeline-date">October 30</div>
         <div class="timeline-content">
-          <h3>🧠 Tech Talks & Tacos</h3>
-          <p>Explore trending tech topics over delicious tacos. Learn and connect with tech enthusiasts.</p>
+          <h3>Social Event</h3>
+          <p>Enjoy pizza and games, including a FIFA tournament and a Halloween-themed event.</p>
+          <div class="full-details">
+            <ul>
+                <li>Pizza and games (FIFA and Halloween Event).</li>
+                <li>Announcements.</li>
+            </ul>
+          </div>
           <a href="#" class="read-more">Read More</a>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">September 15, 2025</div>
+        <div class="timeline-date">November 6</div>
         <div class="timeline-content">
-          <h3>💼 Resume & LinkedIn Power Hour</h3>
-          <p>Get pro tips on improving your resume and LinkedIn to stand out in job searches.</p>
+          <h3>“Being Black in STEM”</h3>
+          <p>Join a professional panel to discuss navigating identity and careers as a Black professional in STEM.</p>
+          <div class="full-details">
+            <ul>
+                <li>**Type:** Professional / Cultural</li>
+                <li>Professional Panel: Q&A with 2–4 Black professionals.</li>
+                <li>Topics: Navigating college, internships, and racial identity in STEM, balancing ambition, self-care, and culture.</li>
+                <li>A short but powerful Black documentary.</li>
+                <li>Partner with the BIG club, Career Services or the multicultural center.</li>
+            </ul>
+            <p><strong>📌 Outcome:</strong> Real-world inspiration, networking, mentorship opportunities.</p>
+          </div>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">November 19</div>
+        <div class="timeline-content">
+          <h3>Fall Semester Wrap-Up</h3>
+          <p>A finals-focused session for students to recharge, reflect, and prepare for exams with a supportive community.</p>
+          <div class="full-details">
+            <ul>
+                <li>**Type:** Academic Support / Wellness</li>
+                <li>Guided reflection: "What went well this semester?" (flashbacks).</li>
+                <li>Share study playlists, favorite apps, or group study signups.</li>
+                <li>Quick self-care tips for finals: sleep, food, balance.</li>
+                <li>A thank-you package for volunteers and snacks, study kits, or giveaway a care package.</li>
+            </ul>
+            <p><strong>📌 Outcome:</strong> Reduced stress, encouragement, preparation for finals.</p>
+          </div>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">December 4</div>
+        <div class="timeline-content">
+          <h3>Social Event</h3>
+          <p>Enjoy pizza and well wishes for final exams, along with updates on the region conference.</p>
+          <div class="full-details">
+            <ul>
+                <li>Pizza and well wishes for exams.</li>
+                <li>Updates on the region conference.</li>
+            </ul>
+          </div>
           <a href="#" class="read-more">Read More</a>
         </div>
       </div>
 
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const readMoreButtons = document.querySelectorAll('.read-more');
+
+        readMoreButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                const contentBox = this.closest('.timeline-content');
+                const fullDetails = contentBox.querySelector('.full-details');
+                
+                if (fullDetails) {
+                    // Toggle the 'visible' class
+                    fullDetails.classList.toggle('visible');
+
+                    // Change the button text
+                    if (fullDetails.classList.contains('visible')) {
+                        this.textContent = 'Read Less';
+                    } else {
+                        this.textContent = 'Read More';
+                    }
+                }
+            });
+        });
+    });
+  </script>
 
 </body>
 </html>
