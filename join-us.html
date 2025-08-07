@@ -297,70 +297,88 @@ main {
     color: var(--secondary-color);
 }
 
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: row; /* Keep title and button on one row */
-        justify-content: space-between; /* Space out title and button */
-        align-items: center;
-    }
+ .navbar {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+ }
 
-    /* Show mobile menu toggle button */
-    .menu-icon {
-        display: block;
-    }
+ /* Show mobile menu toggle button */
+ .menu-icon {
+  display: block;
+  background: none; /* Remove default button background */
+  color: var(--text-light); /* Or any color that fits your design */
+  border: none;
+  font-size: 1.5rem; /* Adjust icon size */
+  cursor: pointer;
+  outline: none; /* Remove focus outline */
+ }
 
-    /* Hide desktop navigation by default on mobile */
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 100%; /* Position below the header */
-        left: 0;
-        background-color: var(--primary-color); /* Match header background */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 1rem 0;
-        text-align: center;
-    }
+ /* Hide desktop navigation by default on mobile */
+ .nav-menu {
+  display: none;
+  flex-direction: column;
+  width: 100%; /* Make the dropdown full width */
+  position: absolute;
+  top: 60px; /* Adjust based on your header height */
+  left: 0;
+  background-color: var(--primary-color); /* Match header background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  text-align: left;
+  z-index: 10; /* Ensure it's above other content */
+ }
 
-    /* Show mobile navigation when 'active' class is present */
-    .nav-menu.active {
-        display: flex;
-    }
+ /* Show mobile navigation when 'active' class is present */
+ .nav-menu.active {
+  display: flex;
+ }
 
-    .nav-menu ul {
-        flex-direction: column;
-        width: 100%;
-        gap: 0; /* Remove gap for vertical stacking */
-    }
+ .nav-menu ul {
+  flex-direction: column;
+  width: 100%;
+  gap: 0;
+  padding: 0; /* Remove default ul padding */
+  list-style: none; /* Remove bullet points */
+ }
 
-    .nav-menu ul li {
-        margin: 0.5rem 0; /* Add vertical spacing for mobile links */
-    }
+ .nav-menu ul li {
+  margin: 0; /* Remove list item margins */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional separator */
+ }
 
-    .nav-link {
-        display: block; /* Make links full width for easier tapping */
-        padding: 0.8rem 1rem;
-    }
+ .nav-menu ul li:last-child {
+  border-bottom: none; /* Remove separator from the last item */
+ }
 
-    /* Adjust font sizes for smaller screens */
-    .nsbe-mankato-title {
-        font-size: 1.3rem;
-    }
+ .nav-link {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: white; /* Link color on the mobile menu */
+  text-decoration: none;
+ }
 
-    .section-title {
-        font-size: 2rem;
-    }
-    .section-subtitle {
-        font-size: 1rem;
-    }
-    .instructions-list {
-        padding: 0 1rem; /* Adjust padding for mobile */
-    }
+ /* Adjust font sizes for smaller screens */
+ .nsbe-mankato-title {
+  font-size: 1.3rem;
+ }
+
+ .section-title {
+  font-size: 2rem;
+ }
+ .section-subtitle {
+  font-size: 1rem;
+ }
+ .instructions-list {
+  padding: 0 1rem;
+ }
 }
 </style>
 
 </html>
+
 
 
