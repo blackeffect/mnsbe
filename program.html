@@ -4,29 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programs | NSBE Mankato</title>
-    <link rel="icon" type="image/png" href="images/nsbeWhiteLogo.png">
+    <link rel="icon" type="image/png" href="images\nsbeWhiteLogo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* --- General & Variables --- */
         :root {
-            --primary-color: #007bff;
-            --secondary-color: #0056b3;
-            --nsbe-mankato-green: #385e43;
-            --black-background: #1a1a1a;
+            --primary-color: #4f46e5;
+            --secondary-color: #ff9900;
+            --black-background: #000;
             --white-text: #fff;
-            --light-gray: #f8f9fa;
-            --dark-gray: #343a40;
-            --cta-button-color: #ffc107;
-            --cta-button-hover: #e0a800;
+            --light-gray: #f4f4f4;
+            --dark-green: #385e43;
+            --nsbe-mankato-green: #4a6c50; /* A green to match the cards */
         }
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
             background-color: var(--light-gray);
-            color: var(--dark-gray);
-            padding-top: 90px;
-            line-height: 1.6;
+            color: #333;
+            padding-top: 90px; /* Space for the fixed header */
         }
         .container {
             max-width: 1200px;
@@ -79,7 +76,7 @@
             white-space: nowrap;
         }
         .nav-link:hover {
-            color: var(--cta-button-color);
+            color: var(--secondary-color);
         }
         .menu-icon {
             display: none;
@@ -90,15 +87,15 @@
             padding: 60px 0;
         }
         .content-section.dark {
-            background-color: var(--nsbe-mankato-green);
+            background-color: var(--dark-green);
             color: var(--white-text);
         }
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 40px;
-            color: var(--dark-gray);
+            margin-bottom: 20px;
+            color: #1f2937;
         }
         .section-title.white {
             color: var(--white-text);
@@ -114,14 +111,12 @@
         .program-intro-video {
             flex: 1;
             min-width: 300px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
         }
         .program-intro-video iframe {
             width: 100%;
             height: 350px;
-            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
         .program-intro-text {
             flex: 1;
@@ -131,7 +126,7 @@
             font-size: 2.2rem;
             margin-top: 0;
             line-height: 1.2;
-            color: var(--nsbe-mankato-green);
+            color: var(--dark-green);
         }
         .program-intro-text p {
             font-size: 1.1rem;
@@ -143,6 +138,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
+            margin-top: 40px;
         }
         .category-card {
             background-color: #fff;
@@ -151,10 +147,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
         .category-card:hover {
             transform: translateY(-5px);
@@ -162,20 +154,19 @@
         }
         .category-card h3 {
             font-size: 1.5rem;
-            color: var(--nsbe-mankato-green);
+            color: var(--dark-green);
             margin-top: 0;
         }
         .category-card p {
             color: #666;
             font-size: 1rem;
             line-height: 1.5;
-            flex-grow: 1;
         }
         .category-card a.card-link {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: var(--nsbe-mankato-green);
+            background-color: var(--dark-green);
             color: var(--white-text);
             text-decoration: none;
             border-radius: 8px;
@@ -199,16 +190,10 @@
             padding: 20px;
             border-radius: 10px;
             height: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: background-color 0.3s ease;
-        }
-        .membership-card:hover {
-            background-color: rgba(255, 255, 255, 0.2);
         }
         .membership-card h4 {
             font-size: 1.3rem;
             margin: 0 0 10px;
-            color: var(--cta-button-color);
         }
         .membership-card p {
             font-size: 0.9rem;
@@ -221,35 +206,23 @@
             line-height: 1.6;
         }
         
-        /* --- Resources Section --- */
-        .resources p {
-            margin-bottom: 20px;
-        }
-
         /* --- Leadership Section --- */
         .leadership-team {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
             text-align: center;
         }
         .leadership-member {
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin: 40px 0;
         }
         .leadership-member img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--nsbe-mankato-green);
+            border: 4px solid var(--dark-green);
         }
         .leadership-member h3 {
             margin: 10px 0 5px;
-            color: var(--nsbe-mankato-green);
+            color: var(--dark-green);
         }
         .leadership-member p {
             font-style: italic;
@@ -260,78 +233,34 @@
             padding: 30px;
             border-radius: 12px;
             margin-top: 20px;
-            text-align: left;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
         }
         .president-word p {
             font-style: italic;
             font-size: 1.2rem;
             color: #444;
-            position: relative;
-            padding-left: 30px;
-            padding-right: 30px;
         }
         .president-word p::before {
             content: '“';
-            font-size: 3rem;
+            font-size: 2rem;
             font-family: serif;
-            color: #ccc;
-            position: absolute;
-            left: 0;
-            top: -10px;
+            color: #999;
+            position: relative;
+            top: 10px;
+            margin-right: 5px;
         }
         .president-word p::after {
             content: '”';
-            font-size: 3rem;
+            font-size: 2rem;
             font-family: serif;
-            color: #ccc;
-            position: absolute;
-            right: 0;
+            color: #999;
+            position: relative;
             bottom: -10px;
+            margin-left: 5px;
+        }
+        .resources {
+            margin-top: 40px;
         }
 
-        /* --- Our Story Sections --- */
-        .intro-section p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-        .about-image {
-            text-align: center;
-            margin: 30px 0;
-        }
-        .about-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .mission-vision-section {
-            padding: 40px 0;
-        }
-        .mission-vision-section .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .mission-vision-section .card {
-            background-color: var(--white-text);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        .mission-vision-section .card:hover {
-            transform: translateY(-5px);
-        }
-        .mission-vision-section .card h3 {
-            color: var(--nsbe-mankato-green);
-            margin-top: 0;
-        }
-        
         /* --- Call to Action Sections --- */
         .cta-section {
             background-color: #555;
@@ -353,7 +282,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
             z-index: 1;
         }
         .cta-content {
@@ -366,88 +295,19 @@
         }
         .cta-section .cta-button {
             display: inline-block;
-            background-color: var(--cta-button-color);
-            color: var(--dark-gray);
+            background-color: var(--secondary-color);
+            color: #fff;
             padding: 15px 30px;
             text-decoration: none;
             font-weight: 700;
             border-radius: 8px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3s ease;
         }
         .cta-section .cta-button:hover {
-            background-color: var(--cta-button-hover);
+            background-color: var(--primary-color);
         }
 
-        /* --- Footer Styles --- */
-        .footer {
-            background-color: var(--black-background);
-            color: var(--white-text);
-            padding: 60px 20px 20px;
-            font-size: 0.9em;
-        }
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-        }
-        .footer-logo img {
-            height: 80px;
-            width: auto;
-        }
-        .footer-links,
-        .footer-contact,
-        .footer-social {
-            flex: 1;
-            min-width: 200px;
-        }
-        .footer-links h3,
-        .footer-contact h3,
-        .footer-social h3 {
-            color: var(--cta-button-color);
-            margin-bottom: 20px;
-            font-size: 1.2em;
-        }
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-        .footer-links a,
-        .footer-contact p {
-            color: var(--white-text);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .footer-links a:hover {
-            color: var(--cta-button-color);
-        }
-        .footer-contact p i {
-            margin-right: 10px;
-            color: var(--cta-button-color);
-        }
-        .footer-social a {
-            color: var(--white-text);
-            font-size: 1.5em;
-            margin-right: 15px;
-            transition: color 0.3s ease;
-        }
-        .footer-social a:hover {
-            color: var(--cta-button-color);
-        }
-        .footer-bottom {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #bbb;
-        }
-
-        /* --- Mobile Navigation & Responsive Design --- */
+        /* --- Mobile Navigation --- */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -498,135 +358,127 @@
             .program-intro-flex {
                 flex-direction: column;
             }
-            .program-intro-text {
-                text-align: center;
-            }
             .program-intro-text h2 {
                 font-size: 1.8rem;
             }
-            .section-title {
-                font-size: 2rem;
-            }
-            .footer-content {
-                flex-direction: column;
+            .program-intro-text {
                 text-align: center;
-                gap: 20px;
             }
-            .footer-logo {
-                margin-bottom: 20px;
-            }
-            .footer-links ul {
-                justify-content: center;
-            }
-            .footer-social a {
-                margin: 0 10px;
+            .section-title {
+                text-align: center;
             }
         }
 
-        /* Specific CSS for the 'Our Story' section to match the image */
-        .our-story-section {
-            position: relative;
-            background-image: url('images/image_28ccbe.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0;
-            text-align: center;
-            color: white;
-            z-index: 1;
-        }
 
-        .our-story-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency as needed */
-            z-index: 2;
-        }
+        
 
-        .our-story-content {
-            position: relative;
-            z-index: 3;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    font-size: 0.9em;
+}
 
-        .our-story-content h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            display: inline-block;
-            position: relative;
-        }
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
 
-        .our-story-content h2::after {
-            content: '';
-            width: 50px;
-            height: 3px;
-            background-color: white;
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+.footer-logo img {
+    height: 80px;
+    width: auto;
+}
 
-        .our-story-content p {
-            font-size: 1.15rem;
-            line-height: 1.6;
-            margin-top: 30px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
+.footer-links,
+.footer-contact,
+.footer-social {
+    flex: 1;
+    min-width: 200px;
+}
 
-        /* New styles for 3 identical cards */
-        .identical-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .identical-card {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .identical-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-        .identical-card h3 {
-            font-size: 1.5rem;
-            color: var(--nsbe-mankato-green);
-            margin-top: 0;
-        }
-        .identical-card p {
-            color: #666;
-            font-size: 1rem;
-            line-height: 1.5;
-            flex-grow: 1;
-        }
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+    color: #f57c00; /* Orange headings */
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
 
-        /* --- Responsive adjustments for new 'Our Story' section --- */
-        @media (max-width: 600px) {
-            .our-story-content h2 {
-                font-size: 2rem;
-            }
-            .our-story-content p {
-                font-size: 1rem;
-            }
-        }
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-contact p {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f57c00;
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: #f57c00;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #f57c00;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-social a {
+        margin: 0 10px;
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -643,12 +495,12 @@
             </button>
             <nav class="nav-menu" id="nav-links">
                 <ul>
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="join-us.html" class="nav-link">Join Us</a></li>
+                    <li><a href="index.html" class="nav-link">home</a></li>
+                    <li><a href="join-us.html" class="nav-link">join us</a></li>
                     <li><a href="program.html" class="nav-link">Our Team</a></li>
-                    <li><a href="donate.html" class="nav-link">Donate</a></li>
+                    <li><a href="donate.html" class="nav-link">donate</a></li>
                     <li><a href="contact.html" class="nav-link">Contact Us</a></li>
-                </ul>
+                                    </ul>
             </nav>
         </div>
     </header>
@@ -657,14 +509,16 @@
         <section class="content-section">
             <div class="container program-intro-flex">
                 <div class="program-intro-video">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="NSBE Mankato Intro Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="images\WhatsApp Video 2025-08-10 at 12.34.49_8395a250.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="program-intro-text">
-                    <h2>Our Programs, Mankato Chapter</h2>
+                    <h2>Our Program, Mankato Chapter</h2>
                     <p>
+                        
+                       
                         Our program is designed to provide members with opportunities for academic, professional, and personal growth. We believe in fostering a community where students can excel and make a meaningful impact.
+                        <p>Stand. Be Proactive. Fo Solid - 2025/2026</p>
                     </p>
-                    <p><strong>Stand. Be Proactive. Go Solid - 2025/2026</strong></p>
                 </div>
             </div>
         </section>
@@ -672,30 +526,36 @@
         <section class="content-section">
             <div class="container">
                 <h2 class="section-title">The Six Pillars of Our Chapter</h2>
-                <div class="identical-cards-grid">
-                    <div class="identical-card">
-                        <h3>Pillar One</h3>
-                        <p>Academic Excellence, NSBE Mankato Leadership Program, Community Improvement Initiative</p>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <h3>Academic Excellence</h3>
+                        <p>We foster scholastic achievement and empower future leaders through workshops, special conferences, hackathons, and educational panels.</p>
+                        <a href="#" class="card-link">Learn More</a>
                     </div>
-                    <div class="identical-card">
-                        <h3>Pillar Two</h3>
-                        <p>The Voice, Career Development Program, Networking & Social Programs</p>
+                    <div class="category-card">
+                        <h3>NSBE Mankato Leadership Program</h3>
+                        <p>Students have opportunities to take on leadership roles in administrative, member, program, finance, and communication zones, fostering personal growth and professional development.</p>
+                        <a href="#" class="card-link">Learn More</a>
                     </div>
-                    <div class="identical-card">
-                        <h3>Pillar Three</h3>
-                        <p>Academic Excellence, NSBE Mankato Leadership Program, Community Improvement Initiative</p>
+                    <div class="category-card">
+                        <h3>Community Improvement Initiative</h3>
+                        <p>Committed to community service, we engage in outreach and work on engineering solutions for pressing needs that lack funding.</p>
+                        <a href="#" class="card-link">Learn More</a>
                     </div>
-                    <div class="identical-card">
-                        <h3>Pillar Four</h3>
-                        <p>The Voice, Career Development Program, Networking & Social Programs</p>
+                    <div class="category-card">
+                        <h3>The Voice</h3>
+                        <p>This program gathers feedback on community issues, providing a platform for students and leaders to collaborate, develop ideas, and bring them to life at the university.</p>
+                        <a href="#" class="card-link">Learn More</a>
                     </div>
-                    <div class="identical-card">
-                        <h3>Pillar Five</h3>
-                        <p>Academic Excellence, NSBE Mankato Leadership Program, Community Improvement Initiative</p>
+                    <div class="category-card">
+                        <h3>Career development Program</h3>
+                        <p>We equip members for success through resume workshops, interview prep, mentorship, and recruiter connections that prepare students for internships and careers.</p>
+                        <a href="#" class="card-link">Learn More</a>
                     </div>
-                    <div class="identical-card">
-                        <h3>Pillar Six</h3>
-                        <p>The Voice, Career Development Program, Networking & Social Programs</p>
+                    <div class="category-card">
+                        <h3>Networking and social program</h3>
+                        <p>We build community and professional relationships through socials, mixers, and collaborative events that strengthen bonds and expand networks within and beyond NSBE.</p>
+                        <a href="#" class="card-link">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -703,7 +563,7 @@
 
         <section class="content-section dark">
             <div class="container">
-                <h2 class="section-title white">About NSBE</h2>
+                <h2 class="section-title white">NSBE</h2>
                 <p>
                     NSBE empowers students and professionals—especially Black engineers—with the skills, connections, and opportunities needed to drive innovation and shape the future of STEM. By fostering leadership, technical expertise, and industry access, NSBE helps meet the demands of a rapidly evolving, interconnected world. Committed to inclusivity and impact, it remains a hub for growth, empowerment, and global industry readiness.
                 </p>
@@ -728,6 +588,7 @@
                 </div>
                 <div class="nsbe-regions">
                     <p>
+                        <br>
                         NSBE is divided into six collegiate regions. Our program operates the collegiate chapter at Minnesota State University, Mankato, which is part of NSBE’s mother region — Region IV. Region IV consists of chapters in Illinois, Indiana, Michigan, Minnesota, Ohio, Wisconsin, as well as Central Canada, Central Africa, and East Africa.
                     </p>
                 </div>
@@ -738,21 +599,23 @@
             <div class="container">
                 <h2 class="section-title">Resources</h2>
                 <p>
-                    The Mankato chapter leadership committee works hard for the development and implementation of the NSBE academic retention program at Minnesota State University, Mankato. It ensures that the flow of information may occur through NSBE’s chapter, regional, and national leadership by maintaining updated contact information.
+                    The Mankato chapter leadership committee works hard for the development and implementation of the NSBE academic retention program at Mankato Minnesota State University. It ensures that the flow of information may occur through NSBE’s chapter, regional, and national leadership by maintaining updated contact information.
                 </p>
                 <p>
                     Minnesota State University has established numerous facilities that collaborate closely with our NSBE Mankato chapter to help us achieve our goals. The university administration has created various departments, such as the Career Development Center, the library and research services, and the Multicultural Center, which have consistently supported and benefited our Registered Student Organization (RSO).
                 </p>
 
-                <h2 class="section-title" style="margin-top: 60px;">Meet Our Leadership</h2>
+                <h2 class="section-title" style="margin-top: 60px;">Our Leadership Team</h2>
                 <div class="leadership-team">
-                    <div class="leadership-member">
-                        <img src="images/CommiteeProfiles/HeldanaCandidat.jpg" alt="President's Picture">
-                        <h3>President: Heldana Desayo</h3>
-                        <div class="president-word">
-                            <p>Let your journey as an engineer be a testament to what is possible when passion meets purpose, and when professional excellence is woven with cultural understanding. By succeeding authentically, you pave the way for countless others to rise and redefine what it means to engineer a better tomorrow.</p>
+                    <section>
+                        <div class="leadership-member">
+                            <img src="images/CommiteeProfiles/HeldanaCandidat.jpg" alt="President's Picture">
+                            <h3>Our President: Heldana Desayo</h3>
+                            <div class="president-word">
+                                <p>Let your journey as an engineer be a testament to what is possible when passion meets purpose, and when professional excellence is woven with cultural understanding. By succeeding authentically, you pave the way for countless others to rise and redefine what it means to engineer a better tomorrow.</p>
+                            </div>
                         </div>
-                    </div>
+                    </section>
                     <div class="leadership-member">
                         <img src="images/CommiteeProfiles/IMG_2151_Brice Nyiringabo.jpg" alt="Vice President's Picture">
                         <h3>Vice President: Brice Nyiringabo</h3>
@@ -766,56 +629,32 @@
                         <h3>Secretary: Edlawit Gide</h3>
                     </div>
                     <div class="leadership-member">
-                        <img src="images/CommiteeProfiles/Christina Tilahun.jpg" alt="Treasurer's Picture">
-                        <h3>Treasurer: Christina Tilahun</h3>
+                        <img src="https://via.placeholder.com/150" alt="Treasurer's Picture">
+                        <h3>Treasurer: Tilahun Christina</h3>
                     </div>
                     <div class="leadership-member">
-                        <img src="images/CommiteeProfiles/PSX_20250325_075124_Francis Mpanga.jpg" alt="Senator's Picture">
-                        <h3>Senator: Francis Mpanga</h3>
+                        <img src="images/CommiteeProfiles/PSX_20250325_075124_Francis Mpanga.jpg" alt="Senators's Picture">
+                        <h3>Senator: Francis</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="our-story-section">
-            <div class="our-story-content">
-                <h2>Our Story</h2>
-                <p>
-                    Welcome to the Mankato NSBE Chapter! We are a student-run chapter of the National Society of Black Engineers, committed to empowering aspiring Black engineers, scientists, and technologists on our campus and in our community.
-                </p>
-                <p>
-                    Our chapter provides academic support, leadership opportunities, career development, and a strong community for Black students in STEM. We host workshops, networking events, mentorship programs, and more to help members thrive inside and outside the classroom.
-                </p>
-            </div>
-        </section>
-
-        <section class="mission-vision-section">
-            <div class="container">
-                <div class="card">
-                    <h3>Our Mission</h3>
-                    <p>To increase the number of culturally responsible black engineers who excel academically, succeed professionally and positively impact the community.</p>
-                </div>
-                <div class="card">
-                    <h3>Our Vision</h3>
-                    <p>To see a world where Black students are empowered to pursue engineering, thrive in academic and professional spaces, and bring engineering into the hearts of their families and communities.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section" style="background-image: url('images/cta-background-1.jpg');">
+        <section class="cta-section" style="background-image: url('https://via.placeholder.com/1200x400/212121/ffffff?text=Join+NSBE+Mankato');">
             <div class="cta-content">
                 <h2>Join NSBE Mankato Chapter</h2>
                 <a href="https://mavcentral.mnsu.edu/nsbe/club_signup" class="cta-button">Join Us</a>
             </div>
         </section>
 
-        <section class="cta-section" style="background-image: url('images/cta-background-2.jpg');">
+        <section class="cta-section" style="background-image: url('https://via.placeholder.com/1200x400/4f46e5/ffffff?text=Join+National+NSBE');">
             <div class="cta-content">
                 <h2>Be a National Member of NSBE</h2>
                 <a href="https://nsbe.org/" target="_blank" class="cta-button">Join National NSBE</a>
             </div>
         </section>
     </main>
+
     
     <footer class="footer">
         <div class="footer-content">
@@ -826,10 +665,10 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="program.html">Our Team</a></li>
-                    <li><a href="join-us.html">Join Us</a></li>
-                    <li><a href="donate.html">Donate</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="contactMe.html">Contact</a></li>
+                    <li><a href="store.html">Store</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
