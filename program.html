@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -523,6 +522,111 @@
                 margin: 0 10px;
             }
         }
+
+        /* Specific CSS for the 'Our Story' section to match the image */
+        .our-story-section {
+            position: relative;
+            background-image: url('images/image_28ccbe.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .our-story-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency as needed */
+            z-index: 2;
+        }
+
+        .our-story-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .our-story-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .our-story-content h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background-color: white;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .our-story-content p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-top: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* New styles for 3 identical cards */
+        .identical-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .identical-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .identical-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .identical-card h3 {
+            font-size: 1.5rem;
+            color: var(--nsbe-mankato-green);
+            margin-top: 0;
+        }
+        .identical-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        /* --- Responsive adjustments for new 'Our Story' section --- */
+        @media (max-width: 600px) {
+            .our-story-content h2 {
+                font-size: 2rem;
+            }
+            .our-story-content p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -568,36 +672,18 @@
         <section class="content-section">
             <div class="container">
                 <h2 class="section-title">The Six Pillars of Our Chapter</h2>
-                <div class="categories-grid">
-                    <div class="category-card">
-                        <h3>Academic Excellence</h3>
-                        <p>We foster scholastic achievement and empower future leaders through workshops, special conferences, hackathons, and educational panels.</p>
-                        <a href="#" class="card-link">Learn More</a>
+                <div class="identical-cards-grid">
+                    <div class="identical-card">
+                        <h3>Pillar One</h3>
+                        <p>Academic Excellence, NSBE Mankato Leadership Program, Community Improvement Initiative</p>
                     </div>
-                    <div class="category-card">
-                        <h3>NSBE Mankato Leadership Program</h3>
-                        <p>Students have opportunities to take on leadership roles in administrative, member, program, finance, and communication zones, fostering personal growth and professional development.</p>
-                        <a href="#" class="card-link">Learn More</a>
+                    <div class="identical-card">
+                        <h3>Pillar Two</h3>
+                        <p>The Voice, Career Development Program, Networking & Social Programs</p>
                     </div>
-                    <div class="category-card">
-                        <h3>Community Improvement Initiative</h3>
-                        <p>Committed to community service, we engage in outreach and work on engineering solutions for pressing needs that lack funding.</p>
-                        <a href="#" class="card-link">Learn More</a>
-                    </div>
-                    <div class="category-card">
-                        <h3>The Voice</h3>
-                        <p>This program gathers feedback on community issues, providing a platform for students and leaders to collaborate, develop ideas, and bring them to life at the university.</p>
-                        <a href="#" class="card-link">Learn More</a>
-                    </div>
-                    <div class="category-card">
-                        <h3>Career Development Program</h3>
-                        <p>We equip members for success through resume workshops, interview prep, mentorship, and recruiter connections that prepare students for internships and careers.</p>
-                        <a href="#" class="card-link">Learn More</a>
-                    </div>
-                    <div class="category-card">
-                        <h3>Networking & Social Programs</h3>
-                        <p>We build community and professional relationships through socials, mixers, and collaborative events that strengthen bonds and expand networks within and beyond NSBE.</p>
-                        <a href="#" class="card-link">Learn More</a>
+                    <div class="identical-card">
+                        <h3>Pillar Three</h3>
+                        <p>Academic Excellence, NSBE Mankato Leadership Program, Community Improvement Initiative</p>
                     </div>
                 </div>
             </div>
@@ -679,15 +765,12 @@
             </div>
         </section>
 
-        <section class="content-section" style="padding-top: 0;">
-            <div class="container">
-                <h2 class="section-title">Our Story</h2>
+        <section class="our-story-section">
+            <div class="our-story-content">
+                <h2>Our Story</h2>
                 <p>
                     Welcome to the Mankato NSBE Chapter! We are a student-run chapter of the National Society of Black Engineers, committed to empowering aspiring Black engineers, scientists, and technologists on our campus and in our community.
                 </p>
-                <div class="about-image">
-                    <img src="images/slideshow/1732643727390.jpeg" alt="Our Team Working">
-                </div>
                 <p>
                     Our chapter provides academic support, leadership opportunities, career development, and a strong community for Black students in STEM. We host workshops, networking events, mentorship programs, and more to help members thrive inside and outside the classroom.
                 </p>
